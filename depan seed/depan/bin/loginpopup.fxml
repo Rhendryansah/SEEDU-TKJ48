@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane fx:id="loginPopup" styleClass="login-popup" xmlns:fx="http://javafx.com/fxml" stylesheets="@styles.css">
+    <VBox spacing="20" alignment="CENTER" styleClass="login-container">
+        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
+            <Image url="@//I:/depan%20seed/depan/logo.png"/>
+        </ImageView>
+        
+        <Label text="Welcome Back!" styleClass="welcome-text"/>
+        
+        <TextField fx:id="usernameField" promptText="Username" styleClass="login-field"/>
+        <PasswordField fx:id="passwordField" promptText="Password" styleClass="login-field"/>
+        
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <CheckBox text="Remember me" styleClass="remember-checkbox"/>
+            <Hyperlink text="Forgot password?" styleClass="forgot-password"/>
+        </HBox>
+        
+        <Button text="Log In" styleClass="login-button" onAction="#handleLogin"/>
+        
+        <Separator/>
+        
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Don't have an account?" styleClass="signup-text"/>
+            <Hyperlink text="Sign up" styleClass="signup-link"/>
+        </HBox>
+        
+        <HBox spacing="20" alignment="CENTER" styleClass="social-login">
+            <Button styleClass="social-button, facebook-button">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <Image url="@//I:/depan%20seed/depan/facebook-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button styleClass="social-button, google-button">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <Image url="@//I:/depan%20seed/depan/google-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button styleClass="social-button, apple-button">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <Image url="@//I:/depan%20seed/depan/apple-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+    </VBox>
+    
+    <Button text="✕" styleClass="close-button" AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10" onAction="#closeLoginPopup"/>
+</AnchorPane>

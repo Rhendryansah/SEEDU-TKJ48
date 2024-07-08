@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.KelolaPelatihan">
+    <content>
+        <VBox spacing="20" styleClass="main-container">
+            <!-- Header -->
+            <HBox styleClass="header">
+                <ImageView fitHeight="41.0" fitWidth="86.0" preserveRatio="true">
+                    <Image url="@../image/depanSeedu/logoSeedu.png" />
+                </ImageView>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="buttonBeranda" onAction="#handleButtonBeranda" styleClass="nav-button" text="Beranda" />
+                <Button styleClass="nav-button" text="Kelola Pelatihan" />
+                <Button fx:id="buttonArtikel" onAction="#handleButtonArtikel" styleClass="nav-button" text="Artikel" />
+                <Button fx:id="buttonProfil" onAction="#handleButtonProfil" styleClass="nav-button" text="Profil" />
+                <Button fx:id="buttonKeluar" onAction="#handleButtonKeluar" styleClass="nav-button, logout-button" text="Keluar" />
+            </HBox>
+
+            <!-- Dashboard Summary -->
+            <HBox spacing="20" styleClass="dashboard-summary">
+                <VBox styleClass="summary-card">
+                    <Label styleClass="summary-title" text="Total Pelatihan" />
+                    <Label styleClass="summary-value" text="12" />
+                </VBox>
+                <VBox styleClass="summary-card">
+                    <Label styleClass="summary-title" text="Peserta Aktif" />
+                    <Label styleClass="summary-value" text="250" />
+                </VBox>
+                <VBox styleClass="summary-card">
+                    <Label styleClass="summary-title" text="Rata-rata Penyelesaian" />
+                    <Label styleClass="summary-value" text="75%" />
+                </VBox>
+            </HBox>
+
+            <!-- Pelatihan Yang Dikelola -->
+            <VBox spacing="15" styleClass="section-container">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="section-title" text="Pelatihan Yang Dikelola" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <TextField promptText="Cari pelatihan..." styleClass="search-field" />
+                </HBox>
+                <ScrollPane fitToWidth="true" styleClass="course-scroll-pane">
+                    <VBox spacing="15" styleClass="course-list">
+                        <HBox styleClass="course-item">
+                            <ImageView fitHeight="80" fitWidth="120" preserveRatio="false">
+                                <Image url="@../image/lain%20lain/Wisata-Candi-Prambanan.jpg" />
+                            </ImageView>
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <Label styleClass="course-title" text="Dasar Ekowisata" />
+                                <Label styleClass="course-info" text="Peserta: 45 | Modul: 10 | Durasi: 8 minggu" />
+                                <ProgressBar progress="0.6" styleClass="course-progress" />
+                            </VBox>
+                            <Button fx:id="buttonLihatDetail" onAction="#handleButtonLihatDetail" styleClass="view-button" text="Lihat Detail" />
+                        </HBox>
+                        <HBox styleClass="course-item">
+                            <ImageView fitHeight="80" fitWidth="120" preserveRatio="false">
+                                <Image url="@../image/lain%20lain/beachwalk-k.jpg" />
+                            </ImageView>
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <Label styleClass="course-title" text="Manajemen Hotel Berkelanjutan" />
+                                <Label styleClass="course-info" text="Peserta: 38 | Modul: 12 | Durasi: 10 minggu" />
+                                <ProgressBar progress="0.75" styleClass="course-progress" />
+                            </VBox>
+                            <Button styleClass="view-button" text="Lihat Detail" />
+                        </HBox>
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+
+            <!-- Tambah Soal Ujian -->
+            <VBox spacing="20" styleClass="add-question-form">
+                <Label styleClass="section-title" text="Tambah Soal Ujian" />
+                 <TextArea fx:id="pertanyaanSoal" promptText="Masukkan pertanyaan di sini" styleClass="form-input" wrapText="true" />
+                
+                <VBox spacing="10">
+                    <Label styleClass="form-label" text="Modul" />
+                    <ComboBox fx:id="CBModul" promptText="Pilih Modul" styleClass="form-input" />
+                </VBox>
+                
+                <VBox spacing="10">
+                    <Label styleClass="form-label" text="Pertanyaan" />
+                </VBox>
+                
+                <VBox spacing="10">
+                    <Label styleClass="form-label" text="Opsi Jawaban" />
+                    <HBox spacing="10" styleClass="option-container">
+                        <RadioButton fx:id="rbOpsiA" onAction="#handleRBOpsiA" styleClass="option-radio" />
+                        <TextField fx:id="opsiA" promptText="Opsi A" styleClass="form-input" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                    <HBox spacing="10" styleClass="option-container">
+                        <RadioButton fx:id="rbOpsiB" onAction="#handleRBOpsiB" styleClass="option-radio" />
+                        <TextField fx:id="opsiB" promptText="Opsi B" styleClass="form-input" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                    <HBox spacing="10" styleClass="option-container">
+                        <RadioButton fx:id="rbOpsiC" onAction="#handleRBOpsiC" styleClass="option-radio" />
+                        <TextField fx:id="opsiC" promptText="Opsi C" styleClass="form-input" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                    <HBox spacing="10" styleClass="option-container">
+                        <RadioButton fx:id="rbOpsiD" onAction="#handleRBOpsiD" styleClass="option-radio" />
+                        <TextField fx:id="opsiD" promptText="Opsi D" styleClass="form-input" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                </VBox>
+                
+                <VBox spacing="10">
+                    <Label styleClass="form-label" text="Penjelasan Jawaban" />
+                    <TextArea fx:id="penjelasan" promptText="Masukkan penjelasan jawaban di sini" styleClass="form-input" wrapText="true" />
+                </VBox>
+                
+                <VBox spacing="10">
+                    <HBox spacing="20" />
+                </VBox>
+                
+                <HBox alignment="CENTER_RIGHT" spacing="20">
+                    <Button fx:id="buttonBatal" onAction="#handleButtonBatal" styleClass="cancel-button" text="Batal" />
+                    <Button fx:id="buttonSimpanSoal" onAction="#handleButtonSimpanSoal" styleClass="save-button" text="Simpan Soal" />
+                </HBox>
+            </VBox>
+
+            <!-- Daftar Soal -->
+            <VBox spacing="15" styleClass="question-list">
+                <HBox alignment="CENTER_LEFT">
+                    <Label styleClass="section-title" text="Daftar Soal" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <TextField promptText="Cari soal..." styleClass="search-field" />
+                </HBox>
+                
+                <TableView fx:id="tabelDaftarSoal" styleClass="question-table">
+                    <columns>
+                        <TableColumn fx:id="kolomModul" prefWidth="94.0" text="Modul" />
+                        <TableColumn fx:id="kolomPertanyaan" prefWidth="126.0" text="Pertanyaan" />
+                        <TableColumn fx:id="kolomOpsi" prefWidth="142.39996337890625" text="Opsi" />
+                        <TableColumn fx:id="kolomKunciJawaban" prefWidth="115.19998168945312" text="Kunci Jawaban" />
+                  <TableColumn fx:id="kolomPenjelasan" prefWidth="172.800048828125" text="Penjelasan Jawaban" />
+                    </columns>
+                </TableView>
+                
+                <Pagination styleClass="question-pagination" />
+            </VBox>
+
+            <!-- Jadwal Sesi Pelatihan -->
+            <VBox spacing="15" styleClass="section-container">
+                <Label styleClass="section-title" text="Jadwal Sesi Pelatihan" />
+                <ScrollPane fitToWidth="true" styleClass="schedule-scroll-pane">
+                    <VBox spacing="10" styleClass="schedule-list">
+                        <HBox styleClass="schedule-item">
+                            <VBox>
+                                <Label styleClass="schedule-title" text="Webinar: Inovasi dalam Ekowisata" />
+                                <Label styleClass="schedule-info" text="Tanggal: 15 Juli 2024 | Waktu: 14:00 - 16:00 WIB" />
+                            </VBox>
+                            <Region HBox.hgrow="ALWAYS" />
+                        </HBox>
+                        <HBox styleClass="schedule-item">
+                            <VBox>
+                                <Label styleClass="schedule-title" text="Workshop: Pengelolaan Limbah Hotel" />
+                                <Label styleClass="schedule-info" text="Tanggal: 18 Juli 2024 | Waktu: 09:00 - 12:00 WIB" />
+                            </VBox>
+                            <Region HBox.hgrow="ALWAYS" />
+                        </HBox>
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+
+            <!-- Evaluasi dan Feedback -->
+            <VBox spacing="15" styleClass="section-container">
+                <Label styleClass="section-title" text="Evaluasi dan Feedback" />
+                <HBox spacing="20" styleClass="feedback-summary">
+                    <VBox styleClass="feedback-card">
+                        <Label styleClass="feedback-title" text="Rating Rata-rata" />
+                        <Label styleClass="feedback-value" text="4.7" />
+                        <Label styleClass="feedback-subtitle" text="dari 5 bintang" />
+                    </VBox>
+                    <VBox styleClass="feedback-card">
+                        <Label styleClass="feedback-title" text="Total Ulasan" />
+                        <Label styleClass="feedback-value" text="183" />
+                        <Label styleClass="feedback-subtitle" text="dari semua pelatihan" />
+                    </VBox>
+                    <VBox styleClass="feedback-card">
+                        <Label styleClass="feedback-title" text="Tingkat Kepuasan" />
+                        <Label styleClass="feedback-value" text="92%" />
+                        <Label styleClass="feedback-subtitle" text="peserta puas" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Footer -->
+            <VBox styleClass="footer">
+                <HBox alignment="CENTER" spacing="20">
+                    <Label text="© 2024 SEEDU" />
+                    <Label styleClass="footer-link" text="Kebijakan Privasi" />
+                    <Label styleClass="footer-link" text="Syarat dan Ketentuan" />
+                    <Label styleClass="footer-link" text="Hubungi Kami" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

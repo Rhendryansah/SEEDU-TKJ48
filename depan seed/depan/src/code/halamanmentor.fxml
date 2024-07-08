@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.halamanmentor">
+    <content>
+        <VBox spacing="20" styleClass="main-container">
+            <!-- Header -->
+            <HBox styleClass="header">
+                <ImageView fitHeight="36.0" fitWidth="83.0" preserveRatio="true">
+                    <Image url="@../image/loginPage/logoSeedu.png" />
+                </ImageView>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="buttonBeranda" onAction="#handleButtonBeranda" styleClass="nav-button" text="Beranda" />
+                <Button fx:id="buttonKelolaPelatihan" onAction="#handleButtonKelolaPelatihan" styleClass="nav-button" text="Kelola Pelatihan" />
+                <Button fx:id="buttonArtikel" onAction="#handleButtonArtikel" styleClass="nav-button" text="Artikel" />
+                <Button fx:id="buttonProfil" onAction="#handleButtonProfil" styleClass="nav-button" text="Profil" />
+                <Button fx:id="buttonKeluar" onAction="#handleButtonKeluar" styleClass="nav-button, logout-button" text="Keluar" />
+            </HBox>
+
+            <!-- Welcome Banner -->
+            <VBox style="-fx-background-color: orange;" styleClass="welcome-banner">
+                <Label styleClass="welcome-text" text="Selamat Datang, Mentor Dr. Agus Wijaya!" />
+                <Label styleClass="sub-welcome-text" text="Mari bimbing peserta menuju pariwisata berkelanjutan!" />
+            </VBox>
+
+            <!-- Quick Stats -->
+            <HBox alignment="CENTER" spacing="20">
+                <VBox styleClass="stat-box">
+                    <Label styleClass="stat-number" text="4" />
+                    <Label styleClass="stat-label" text="Kelas Aktif" />
+                </VBox>
+                <VBox styleClass="stat-box">
+                    <Label styleClass="stat-number" text="120" />
+                    <Label styleClass="stat-label" text="Total Peserta" />
+                </VBox>
+                <VBox styleClass="stat-box">
+                    <Label styleClass="stat-number" text="85%" />
+                    <Label styleClass="stat-label" text="Rata-rata Kelulusan" />
+                </VBox>
+                <VBox styleClass="stat-box">
+                    <Label styleClass="stat-number" text="4.8" />
+                    <Label styleClass="stat-label" text="Rating Mentor" />
+                </VBox>
+            </HBox>
+
+            <!-- Upcoming Sessions -->
+            <VBox styleClass="upcoming-sessions">
+                <Label styleClass="section-title" text="Sesi Mendatang" />
+                <HBox alignment="CENTER_LEFT" spacing="15">
+                    <VBox spacing="5">
+                        <Label styleClass="module-title" text="Modul 3: Pengelolaan Limbah dalam Industri Perhotelan" />
+                        <Label styleClass="session-time" text="Hari ini, 14:00 - 16:00 WIB" />
+                        <Label styleClass="session-participants" text="35 peserta terdaftar" />
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="buttonMulaiSesi" onAction="#handleButtonMulaiSesi" styleClass="start-session-button" text="Mulai Sesi" />
+                </HBox>
+            </VBox>
+
+            <!-- Managed Courses -->
+            <Label styleClass="section-title" text="Paket Pelatihan yang Diampu" />
+            <HBox spacing="20">
+                <VBox styleClass="course-card">
+                    <ImageView fitHeight="150" fitWidth="200" preserveRatio="false">
+                        <Image url="@../image/lain%20lain/login.jpeg" />
+                    </ImageView>
+                    <Label styleClass="course-title" text="Dasar Ekowisata" />
+                    <Label styleClass="course-details" text="10 modul | 50 peserta" />
+                    <ProgressBar progress="0.7" styleClass="course-progress" />
+                    <Button fx:id="buttonKelolaKelas" onAction="#handleButtonKelolaKelas" styleClass="manage-button" text="Kelola Kelas" />
+                </VBox>
+                <VBox styleClass="course-card">
+                    <ImageView fitHeight="150" fitWidth="200" preserveRatio="false">
+                        <Image url="@../image/lain%20lain/beachwalk-k.jpg" />
+                    </ImageView>
+                    <Label styleClass="course-title" text="Hotel Berkelanjutan" />
+                    <Label styleClass="course-details" text="8 modul | 35 peserta" />
+                    <ProgressBar progress="0.5" styleClass="course-progress" />
+                    <Button styleClass="manage-button" text="Kelola Kelas" />
+                </VBox>
+            </HBox>
+
+            <!-- Footer -->
+            <VBox styleClass="footer">
+                <HBox alignment="CENTER" spacing="20">
+                    <Label text="© 2024 SEEDU" />
+                    <Label styleClass="footer-link" text="Kebijakan Privasi" />
+                    <Label styleClass="footer-link" text="Syarat dan Ketentuan" />
+                    <Label styleClass="footer-link" text="Hubungi Kami" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

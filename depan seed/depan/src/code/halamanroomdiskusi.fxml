@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.halamanroomdiskusi">
+    <content>
+        <VBox spacing="20" styleClass="main-container">
+            <!-- Header (diperbarui dengan desain yang lebih modern) -->
+            <HBox styleClass="header">
+                <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                    <Image url="@images/logo.png" />
+                </ImageView>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="buttonBeranda" onAction="#handleButtonBeranda" styleClass="nav-button" text="Beranda" />
+                <Button styleClass="nav-button" text="Pelatihan" />
+                <Button styleClass="nav-button" text="Sertifikasi" />
+                <Button styleClass="nav-button" text="Artikel" />
+                <Button styleClass="nav-button" text="Profil" />
+                <Button styleClass="nav-button, logout-button" text="Keluar" />
+            </HBox>
+
+            <!-- Judul Diskusi (dengan styling yang lebih menarik) -->
+            <VBox styleClass="discussion-header">
+                <Label styleClass="discussion-title" text="Tantangan Ekowisata di Era Digital" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="discussion-info" text="Dibuat oleh: John Doe" />
+                    <Circle fill="#888888" radius="3" />
+                    <Label styleClass="discussion-info" text="23 balasan" />
+                    <Circle fill="#888888" radius="3" />
+                    <Label styleClass="discussion-info" text="Dimulai: 15 Juni 2024" />
+                </HBox>
+            </VBox>
+
+            <!-- Daftar Pesan (dengan desain bubble chat yang lebih menarik) -->
+            <VBox spacing="20" styleClass="message-list">
+                <HBox style="-fx-border-color: green;" styleClass="message">
+                    <StackPane>
+                  <children>
+                     <ImageView fitHeight="69.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../image/lain%20lain/formalguy2.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+                    </StackPane>
+                    <VBox styleClass="message-content">
+                        <HBox styleClass="message-header">
+                            <Label styleClass="user-name" text="John Doe" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Label styleClass="message-time" text="15 Juni 2024, 10:30" />
+                        </HBox>
+                        <Label styleClass="message-bubble" text="Bagaimana pendapat kalian tentang penerapan teknologi AR dalam ekowisata? Apakah ini bisa menjadi solusi untuk meningkatkan pengalaman wisatawan tanpa mengganggu ekosistem?" wrapText="true" />
+                    </VBox>
+                </HBox>
+                
+                <HBox style="-fx-border-color: green;" styleClass="message, reply-message">
+                    <StackPane>
+                  <children>
+                     <ImageView fitHeight="83.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../image/lain%20lain/formalguy1.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+                    </StackPane>
+                    <VBox styleClass="message-content">
+                        <HBox styleClass="message-header">
+                            <Label styleClass="user-name" text="Jane Smith" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Label styleClass="message-time" text="15 Juni 2024, 11:15" />
+                        </HBox>
+                        <Label styleClass="message-bubble" text="Menurut saya, AR bisa menjadi alat yang sangat berguna dalam ekowisata. Kita bisa memberikan informasi tambahan tentang flora dan fauna tanpa harus memasang tanda fisik yang bisa mengganggu lingkungan." wrapText="true" />
+                    </VBox>
+                </HBox>
+                
+                <!-- Tambahan bubble chat -->
+                <HBox style="-fx-border-color: green;" styleClass="message">
+                    <StackPane>
+                  <children>
+                     <ImageView fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../image/lain%20lain/formalgirl1.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+                    </StackPane>
+                    <VBox styleClass="message-content">
+                        <HBox styleClass="message-header">
+                            <Label styleClass="user-name" text="Mark Peterson" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Label styleClass="message-time" text="15 Juni 2024, 13:45" />
+                        </HBox>
+                        <Label styleClass="message-bubble" text="Saya setuju dengan Jane. AR juga bisa digunakan untuk membuat rute virtual yang membantu wisatawan tetap di jalur yang aman, mengurangi dampak pada lingkungan sensitif." wrapText="true" />
+                    </VBox>
+                </HBox>
+
+                <HBox style="-fx-border-color: green;" styleClass="message, reply-message">
+                    <StackPane>
+                  <children>
+                     <ImageView fitHeight="43.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../image/lain%20lain/3d47576631dfd5531e34c249aeab36ee-removebg-preview.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+                    </StackPane>
+                    <VBox styleClass="message-content">
+                        <HBox styleClass="message-header">
+                            <Label styleClass="user-name" text="Emma Lee" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Label styleClass="message-time" text="15 Juni 2024, 14:30" />
+                        </HBox>
+                        <Label styleClass="message-bubble" text="Meskipun AR memiliki potensi besar, kita juga perlu mempertimbangkan tantangan teknis seperti konektivitas di daerah terpencil dan dampak penggunaan perangkat elektronik terhadap pengalaman alam yang autentik." wrapText="true" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Form Balas Pesan (dengan desain yang lebih modern) -->
+            <VBox spacing="10" styleClass="reply-form">
+                <TextArea fx:id="balasanField" promptText="Tulis balasan Anda di sini..." styleClass="reply-textarea" />
+                <HBox alignment="CENTER_RIGHT" spacing="10">
+                    <Button styleClass="attach-file-button" text="Lampirkan File" />
+                    <Button fx:id="buttonKirimBalasan" onAction="#handleButtonKirimBalasan" styleClass="send-reply-button" text="Kirim Balasan" />
+                </HBox>
+            </VBox>
+
+            <!-- Footer (diperbarui dengan tautan media sosial) -->
+            <VBox styleClass="footer">
+                <HBox alignment="CENTER" spacing="20">
+                    <Label text="© 2024 SEEDU" />
+                    <Label styleClass="footer-link" text="Kebijakan Privasi" />
+                    <Label styleClass="footer-link" text="Syarat dan Ketentuan" />
+                    <Label styleClass="footer-link" text="Hubungi Kami" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="10" styleClass="social-media-links">
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <Image url="@images/facebook-icon.png" />
+                    </ImageView>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <Image url="@images/twitter-icon.png" />
+                    </ImageView>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <Image url="@images/instagram-icon.png" />
+                    </ImageView>
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

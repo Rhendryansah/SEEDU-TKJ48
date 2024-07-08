@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.abisujian">
+    <content>
+        <VBox spacing="30" style="-fx-padding: 30; -fx-background-color: #F0F4F8;">
+            <!-- Header -->
+            <HBox alignment="CENTER" spacing="20" styleClass="exam-header">
+                <ImageView fitHeight="80" fitWidth="80">
+                    <Image url="@/images/result_icon.png" />
+                </ImageView>
+                <VBox alignment="CENTER">
+                    <Label styleClass="exam-title" text="Hasil Ujian Pariwisata Berkelanjutan" />
+                    <Label styleClass="exam-subtitle" text="Modul: Pengantar Pariwisata Berkelanjutan" />
+                </VBox>
+            </HBox>
+
+            <!-- Skor dan Status -->
+            <HBox alignment="CENTER" spacing="30">
+                <VBox alignment="CENTER" styleClass="result-card">
+                    <Label styleClass="result-title" text="Skor Anda" />
+                    <Label styleClass="result-value" text="85" />
+                    <Label styleClass="result-subtitle" text="dari 100" />
+                </VBox>
+                <VBox alignment="CENTER" styleClass="result-card">
+                    <Label styleClass="result-title" text="Status" />
+                    <Label styleClass="result-value, status-pass" text="LULUS" />
+                    <Label styleClass="result-subtitle" text="Selamat!" />
+                </VBox>
+            </HBox>
+
+            <!-- Analisis Performa -->
+            <VBox spacing="20" styleClass="performance-card">
+                <Label styleClass="section-title" text="Analisis Performa" />
+                <HBox alignment="CENTER" spacing="30">
+                    <PieChart fx:id="pieChartProgress" styleClass="performance-chart" title="Distribusi Jawaban">
+                        <data>
+                            <PieChart.Data name="Benar" value="17" />
+                            <PieChart.Data name="Salah" value="2" />
+                            <PieChart.Data name="Tidak Dijawab" value="1" />
+                        </data>
+                    </PieChart>
+                    <VBox spacing="10">
+                        <Label styleClass="performance-stat" text="Jawaban Benar: 17/20" />
+                        <Label styleClass="performance-stat" text="Jawaban Salah: 2/20" />
+                        <Label styleClass="performance-stat" text="Tidak Dijawab: 1/20" />
+                        <Label styleClass="performance-stat" text="Akurasi: 85%" />
+                        <Label styleClass="performance-stat" text="Waktu Penyelesaian: 45 menit" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Rekomendasi -->
+            <VBox spacing="15" styleClass="recommendation-card">
+                <Label styleClass="section-title" text="Rekomendasi" />
+                <Label styleClass="recommendation-text" text="Berdasarkan hasil ujian Anda, kami merekomendasikan:" wrapText="true" />
+                <VBox spacing="10">
+                    <Label styleClass="recommendation-item" text="• Pelajari lebih lanjut tentang 'Daya Dukung Lingkungan'" />
+                    <Label styleClass="recommendation-item" text="• Fokus pada topik 'Manajemen Destinasi Wisata Berkelanjutan'" />
+                    <Label styleClass="recommendation-item" text="• Ikuti kursus lanjutan 'Strategi Pengembangan Pariwisata Eco-Friendly'" />
+                </VBox>
+            </VBox>
+
+            <!-- Tombol Aksi -->
+            <HBox alignment="CENTER" spacing="20">
+                <Button fx:id="tinjauJawaban" onAction="#handleTinjauJawaban" styleClass="action-button, review-button" text="Tinjau Jawaban" />
+                <Button fx:id="unduhSertif" onAction="#handleUnduhSertif" styleClass="action-button, certificate-button" text="Unduh Sertifikat" />
+                <Button fx:id="backToDashboard" onAction="#handleBackToDashboard" styleClass="action-button, dashboard-button" text="Kembali ke Dashboard" />
+            </HBox>
+        </VBox>
+    </content>
+</ScrollPane>

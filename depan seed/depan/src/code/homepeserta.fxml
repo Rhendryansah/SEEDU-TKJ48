@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.homePeserta">
+    <content>
+        <VBox spacing="20" styleClass="main-container">
+            <!-- Header -->
+            <HBox styleClass="header">
+                <ImageView fitHeight="48.0" fitWidth="84.0" preserveRatio="true">
+               <image>
+                  <Image url="@../image/loginPage/logoSeedu.png" />
+               </image></ImageView>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnBeranda" onAction="#handleButtonBeranda" styleClass="nav-button" text="Beranda" />
+                <Button fx:id="btnPelatihan" onAction="#handleBtnPelatihan" styleClass="nav-button" text="Pelatihan" />
+                <Button fx:id="btnSertifikasi" onAction="#handleButtonSertifikasi" styleClass="nav-button" text="Sertifikasi" />
+                <Button fx:id="btnArtikel" onAction="#handleButtonArtikel" styleClass="nav-button" text="Artikel" />
+                <Button fx:id="btnProfil" onAction="#handleButtonProfil" styleClass="nav-button" text="Profil" />
+                <Button fx:id="btnKeluar" onAction="#handleButtonKeluar" styleClass="nav-button, logout-button" text="Keluar" />
+            </HBox>
+
+            <!-- Welcome Banner -->
+            <VBox style="-fx-background-color: orange;" styleClass="welcome-banner">
+                <Label fx:id="lblSelamatdatang" styleClass="welcome-text" text="Selamat Datang, Jaden!" />
+                <Label styleClass="sub-welcome-text" text="Mari tingkatkan pengetahuan kita tentang pariwisata berkelanjutan!" />
+            </VBox>
+
+            <!-- Quick Stats -->
+            <HBox alignment="CENTER" spacing="20">
+                <VBox styleClass="stat-box">
+                    <Label fx:id="lblKursusAktif" styleClass="stat-number" text="3" />
+                    <Label styleClass="stat-label" text="Kursus Aktif" />
+                </VBox>
+                <VBox styleClass="stat-box">
+                    <Label fx:id="lblProgress" styleClass="stat-number" text="67%" />
+                    <Label styleClass="stat-label" text="Progress" />
+                </VBox>
+                <VBox styleClass="stat-box">
+                    <Label fx:id="lblSertifikat" styleClass="stat-number" text="2" />
+                    <Label styleClass="stat-label" text="Sertifikat" />
+                </VBox>
+                <VBox styleClass="stat-box">
+                    <Label fx:id="lblPoinReward" styleClass="stat-number" text="150" />
+                    <Label styleClass="stat-label" text="Poin Reward" />
+                </VBox>
+            </HBox>
+
+            <!-- Last Viewed Module -->
+            <VBox styleClass="last-viewed-module">
+                <Label styleClass="section-title" text="Lanjutkan Pembelajaran" />
+                <HBox alignment="CENTER_LEFT" spacing="15">
+                    <ImageView fitHeight="125.0" fitWidth="187.0" preserveRatio="false">
+                  <image>
+                     <Image url="@../image/lain%20lain/7-Tips-Bisnis-Homestay-Kekinian-yang-Menguntungkan-3.jpeg" />
+                  </image></ImageView>
+                    <VBox spacing="5">
+                        <Label styleClass="module-title" text="Modul 3: Pengelolaan Limbah dalam Industri Perhotelan" />
+                        <Label styleClass="last-viewed-time" text="Terakhir dilihat: 2 jam yang lalu" />
+                        <ProgressBar progress="0.6" styleClass="module-progress" />
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="buttonLanjutkanModul" onAction="#handleButtonLanjutkanModul" styleClass="continue-button" text="Lanjutkan" />
+                </HBox>
+            </VBox>
+
+            <!-- Featured Courses -->
+            <Label styleClass="section-title" text="Paket Pelatihan Anda" />
+            <HBox spacing="20">
+                <VBox prefHeight="402.0" prefWidth="501.0" styleClass="course-card">
+                    <ImageView fitHeight="221.0" fitWidth="357.0" preserveRatio="false">
+                  <image>
+                     <Image url="@../image/lain%20lain/ekowisata.jpg" />
+                  </image></ImageView>
+                    <Label styleClass="course-title" text="Dasar Ekowisata" />
+                    <Label styleClass="course-details" text="10 modul | 5 pertemuan" />
+                    <ProgressBar progress="0.4" styleClass="course-progress" />
+                    <Button fx:id="btnPelatihan" onAction="#handleBtnPelatihan" styleClass="continue-button" text="Lanjutkan" />
+                </VBox>
+                <VBox styleClass="course-card">
+                    <ImageView fitHeight="220.0" fitWidth="333.0" preserveRatio="false">
+                  <image>
+                     <Image url="@../image/lain%20lain/perhotelan.jpg" />
+                  </image>
+               </ImageView>
+                    <Label styleClass="course-title" text="Hotel Berkelanjutan" />
+                    <Label styleClass="course-details" text="8 modul | 4 pertemuan" />
+                    <ProgressBar progress="0.7" styleClass="course-progress" />
+                    <Button styleClass="continue-button" text="Lanjutkan" />
+                </VBox>
+                <VBox styleClass="course-card">
+                    <ImageView fitHeight="222.0" fitWidth="316.0" preserveRatio="false">
+                  <image>
+                     <Image url="@../image/lain%20lain/candi-prambanan_169.jpeg" />
+                  </image></ImageView>
+                    <Label styleClass="course-title" text="Pariwisata Learn" />
+                    <Label styleClass="course-details" text="12 modul | 6 pertemuan" />
+                    <ProgressBar progress="0.2" styleClass="course-progress" />
+                    <Button styleClass="continue-button" text="Lanjutkan" />
+                </VBox>
+            </HBox>
+
+            <!-- Promo Pelatihan -->
+<Label styleClass="section-title" text="Promo Pelatihan" />
+<HBox spacing="20">
+    <ScrollPane hbarPolicy="NEVER" styleClass="promo-scroll-pane" vbarPolicy="NEVER">
+        <HBox spacing="20">
+            <VBox styleClass="promo-card">
+                <ImageView fitHeight="194.0" fitWidth="292.0" preserveRatio="false">
+                        <image>
+                           <Image url="@../image/lain%20lain/ek1.jpg" />
+                        </image></ImageView>
+                <Label styleClass="course-title" text="Pariwisata Berkelanjutan" />
+                <Label styleClass="course-details" text="8 modul | 4 pertemuan" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="original-price" text="Rp 2.750.000" />
+                    <Label styleClass="promo-price" text="Rp 2.500.000" />
+                </HBox>
+                <Button fx:id="buttonPromo" onAction="#handleButtonPromo" styleClass="promo-button" text="Daftar Sekarang" />
+            </VBox>
+            <VBox styleClass="promo-card">
+                <ImageView fitHeight="198.0" fitWidth="297.0" preserveRatio="false">
+                        <image>
+                           <Image url="@../image/lain%20lain/d56dfaa21aa1.jpg" />
+                        </image></ImageView>
+                <Label styleClass="course-title" text="Digital Marketing untuk Pariwisata" />
+                <Label styleClass="course-details" text="10 modul | 5 pertemuan" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="original-price" text="Rp 799.000" />
+                    <Label styleClass="promo-price" text="Rp 499.000" />
+                </HBox>
+                <Button styleClass="promo-button" text="Daftar Sekarang" />
+            </VBox>
+            <VBox styleClass="promo-card">
+                <ImageView fitHeight="197.0" fitWidth="318.0" preserveRatio="false">
+                        <image>
+                           <Image url="@../image/lain%20lain/1527744982991.jpeg" />
+                        </image></ImageView>
+                <Label styleClass="course-title" text="Sertifikasi Guide Ekowisata" />
+                <Label styleClass="course-details" text="12 modul | 6 pertemuan" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="original-price" text="Rp 999.000" />
+                    <Label styleClass="promo-price" text="Rp 699.000" />
+                </HBox>
+                <Button styleClass="promo-button" text="Daftar Sekarang" />
+            </VBox>
+            <VBox styleClass="promo-card">
+                <ImageView fitHeight="198.0" fitWidth="362.0" preserveRatio="false">
+                        <image>
+                           <Image url="@../image/lain%20lain/Cara-Efektif-Pengelolaan-Limbah-di-Industri-Hotel%20(1).jpg" />
+                        </image></ImageView>
+                <Label styleClass="course-title" text="Pengelolaan Homestay Ramah Lingkungan" />
+                <Label styleClass="course-details" text="9 modul | 4 pertemuan" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="original-price" text="Rp 699.000" />
+                    <Label styleClass="promo-price" text="Rp 449.000" />
+                </HBox>
+                <Button styleClass="promo-button" text="Daftar Sekarang" />
+            </VBox>
+            <VBox styleClass="promo-card">
+                <ImageView fitHeight="201.0" fitWidth="363.0" preserveRatio="false">
+                        <image>
+                           <Image url="@../image/lain%20lain/e4ac5d93f727e6482f582587d60e2b17.jpg" />
+                        </image></ImageView>
+                <Label styleClass="course-title" text="Inovasi Kuliner Lokal untuk Pariwisata" />
+                <Label styleClass="course-details" text="11 modul | 5.5 jam" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="original-price" text="Rp 849.000" />
+                    <Label styleClass="promo-price" text="Rp 549.000" />
+                </HBox>
+                <Button styleClass="promo-button" text="Daftar Sekarang" />
+            </VBox>
+        </HBox>
+    </ScrollPane>
+</HBox>
+
+            <!-- Upcoming Events -->
+            <Label styleClass="section-title" text="Acara Mendatang" />
+            <VBox spacing="10" styleClass="events-container">
+                <HBox styleClass="event-item">
+                    <Label styleClass="event-date" text="15 Jul" />
+                    <VBox>
+                        <Label styleClass="event-title" text="Webinar: Teknologi Hijau dalam Pariwisata" />
+                        <Label styleClass="event-time" text="13:00 - 15:00 WIB" />
+                        <Label styleClass="event-speaker" text="Pembicara: Dr. Eko Prasetyo - Pakar Teknologi Ramah Lingkungan" />
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="buttonWebinar" onAction="#handleButtonWebinar" styleClass="register-button" text="Daftar" />
+                </HBox>
+                <HBox styleClass="event-item">
+                    <Label styleClass="event-date" text="22 Jul" />
+                    <VBox>
+                        <Label styleClass="event-title" text="Workshop: Pengelolaan Limbah di Industri Perhotelan" />
+                        <Label styleClass="event-time" text="09:00 - 12:00 WIB" />
+                        <Label styleClass="event-speaker" text="Instruktur: Ir. Siti Nurhayati - Konsultan Manajemen Limbah" />
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button styleClass="register-button" text="Daftar" />
+                </HBox>
+                <HBox styleClass="event-item">
+                    <Label styleClass="event-date" text="5 Agu" />
+                    <VBox>
+                        <Label styleClass="event-title" text="Seminar: Sertifikasi Ekowisata Internasional" />
+                        <Label styleClass="event-time" text="10:00 - 12:00 WIB" />
+                        <Label styleClass="event-speaker" text="Pembicara: John Smith - Global Sustainable Tourism Council" />
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button styleClass="register-button" text="Daftar" />
+                </HBox>
+            </VBox>
+
+            <!-- Live Streaming -->
+            <Label styleClass="section-title" text="Video Streaming Terbaru" />
+            <HBox styleClass="streaming-container">
+                <ImageView fitHeight="180" fitWidth="299.0" preserveRatio="false">
+               <image>
+                  <Image url="@../image/lain%20lain/Screenshot%20(143).png" />
+               </image></ImageView>
+                <VBox spacing="10">
+                    <Label styleClass="streaming-title" text="Tips Membangun Resort Ramah Lingkungan">
+                  <VBox.margin>
+                     <Insets left="100.0" />
+                  </VBox.margin>
+               </Label>
+                    <Label styleClass="streaming-info" text="Distreaming 2 hari yang lalu">
+                  <VBox.margin>
+                     <Insets left="100.0" />
+                  </VBox.margin>
+               </Label>
+                    <Label styleClass="streaming-presenter" text="Oleh: Ir. Bambang Sutrisno - Arsitek Berkelanjutan">
+                  <VBox.margin>
+                     <Insets left="100.0" />
+                  </VBox.margin>
+               </Label>
+                    <Button styleClass="watch-button" text="Tonton Ulang">
+                  <VBox.margin>
+                     <Insets left="100.0" />
+                  </VBox.margin>
+               </Button>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+                </VBox>
+            </HBox>
+
+<!-- Eco Tips -->
+<Label styleClass="section-title" text="Tips Pariwisata Ramah Lingkungan" />
+<HBox spacing="20" styleClass="eco-tips-container">
+    <VBox styleClass="eco-tip-card">
+        <ImageView fitHeight="65.0" fitWidth="70.0" preserveRatio="true">
+                  <image>
+                     <Image url="@../image/lain%20lain/botol.png" />
+                  </image></ImageView>
+        <Label text="Gunakan botol minum isi ulang saat berwisata" textAlignment="CENTER" wrapText="true">
+                  <VBox.margin>
+                     <Insets top="15.0" />
+                  </VBox.margin></Label>
+    </VBox>
+    <VBox styleClass="eco-tip-card">
+        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
+                  <image>
+                     <Image url="@../image/lain%20lain/makan.png" />
+                  </image></ImageView>
+        <Label text="Beli produk dan makanan lokal untuk mendukung ekonomi setempat" textAlignment="CENTER" wrapText="true" />
+    </VBox>
+    <VBox styleClass="eco-tip-card">
+        <ImageView fitHeight="78.0" fitWidth="76.0" preserveRatio="true">
+                  <VBox.margin>
+                     <Insets left="20.0" />
+                  </VBox.margin>
+                  <image>
+                     <Image url="@../image/lain%20lain/remot.png" />
+                  </image>
+        </ImageView>
+        <Label text="Matikan lampu dan AC saat meninggalkan kamar hotel" textAlignment="CENTER" wrapText="true">
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin></Label>
+    </VBox>
+    <VBox styleClass="eco-tip-card">
+        <ImageView fitHeight="80.0" fitWidth="78.0" preserveRatio="true">
+                  <image>
+                     <Image url="@../image/lain%20lain/sepeda.png" />
+                  </image></ImageView>
+        <Label text="Gunakan transportasi umum atau bersepeda saat berwisata" textAlignment="CENTER" wrapText="true">
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin></Label>
+    </VBox>
+    <VBox styleClass="eco-tip-card">
+        <ImageView fitHeight="82.0" fitWidth="81.0" preserveRatio="true">
+                  <image>
+                     <Image url="@../image/lain%20lain/alambudaya.png" />
+                  </image></ImageView>
+        <Label text="Hormati alam dan budaya lokal, jangan tinggalkan jejak" textAlignment="CENTER" wrapText="true">
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin></Label>
+    </VBox>
+    <VBox styleClass="eco-tip-card">
+        <ImageView fitHeight="88.0" fitWidth="91.0" preserveRatio="true">
+                  <image>
+                     <Image url="@../image/depanSeedu/sertif.png" />
+                  </image></ImageView>
+        <Label text="Pilih akomodasi yang memiliki sertifikasi ramah lingkungan" textAlignment="CENTER" wrapText="true">
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin></Label>
+    </VBox>
+</HBox>
+
+            <!-- Recent Documents -->
+            <Label styleClass="section-title" text="Dokumen Terbaru" />
+            <VBox spacing="10" styleClass="documents-container">
+                <HBox styleClass="document-item">
+                    <ImageView fitHeight="17.0" fitWidth="17.0">
+                  <image>
+                     <Image url="@../image/lain%20lain/pdf.png" />
+                  </image></ImageView>
+                    <Label styleClass="document-title" text="Panduan Praktis Ekowisata.pdf" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button styleClass="download-button" text="Unduh" />
+                </HBox>
+                <HBox styleClass="document-item">
+                    <ImageView fitHeight="19.0" fitWidth="16.0">
+                  <image>
+                     <Image url="@../image/lain%20lain/pdf.png" />
+                  </image></ImageView>
+                    <Label styleClass="document-title" text="Checklist Audit Lingkungan Hotel.pdf" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button styleClass="download-button" text="Unduh" />
+                </HBox>
+                <HBox styleClass="document-item">
+                    <ImageView fitHeight="17.0" fitWidth="17.0">
+                  <image>
+                     <Image url="@../image/lain%20lain/pdf.png" />
+                  </image></ImageView>
+                    <Label styleClass="document-title" text="Presentasi Manajemen Limbah.pdf" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button styleClass="download-button" text="Unduh" />
+                </HBox>
+            </VBox>
+
+            <!-- Footer -->
+            <VBox styleClass="footer">
+                <HBox alignment="CENTER" spacing="20">
+                    <Label text="© 2024 SEEDU" />
+                    <Label styleClass="footer-link" text="Kebijakan Privasi" />
+                    <Label styleClass="footer-link" text="Syarat dan Ketentuan" />
+                    <Label styleClass="footer-link" text="Hubungi Kami" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.tinjaujawaban">
+    <content>
+        <VBox spacing="30" style="-fx-padding: 30; -fx-background-color: #F0F4F8;">
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="20" styleClass="review-header">
+                <ImageView fitHeight="78.0" fitWidth="68.0">
+                    <Image url="@../image/lain%20lain/3d47576631dfd5531e34c249aeab36ee-removebg-preview.png" />
+                </ImageView>
+                <VBox>
+                    <Label styleClass="review-title" text="Tinjau Jawaban Ujian" />
+                    <Label styleClass="review-subtitle" text="Pariwisata Berkelanjutan" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label styleClass="review-score" text="Skor: 85/100" />
+            </HBox>
+
+            <!-- Daftar Pertanyaan -->
+            <VBox spacing="20" styleClass="questions-list">
+                <!-- Contoh pertanyaan, ulangi sesuai kebutuhan -->
+                <VBox styleClass="question-item">
+                    <Label styleClass="question-number" text="Soal 1" />
+                    <Label styleClass="question-text" text="Apakah yang dimaksud dengan konsep 'daya dukung' dalam konteks pariwisata berkelanjutan?" wrapText="true" />
+                    <VBox styleClass="options-container">
+                        <RadioButton disable="true" selected="true" styleClass="option, correct-answer" text="A. Kemampuan lingkungan dan masyarakat untuk menampung aktivitas pariwisata tanpa dampak negatif" />
+                        <RadioButton disable="true" styleClass="option" text="B. Jumlah maksimum wisatawan yang dapat diakomodasi oleh sebuah destinasi" />
+                        <RadioButton disable="true" styleClass="option" text="C. Kapasitas infrastruktur pariwisata di suatu daerah" />
+                        <RadioButton disable="true" styleClass="option" text="D. Batas minimal wisatawan yang dibutuhkan untuk mendukung ekonomi lokal" />
+                    </VBox>
+                    <Label styleClass="explanation" text="Penjelasan: Konsep 'daya dukung' mengacu pada kemampuan suatu destinasi untuk menampung aktivitas pariwisata tanpa menyebabkan kerusakan pada lingkungan atau masalah sosial." wrapText="true" />
+                </VBox>
+
+                <!-- Tambahkan pertanyaan lainnya di sini -->
+
+            </VBox>
+
+            <!-- Tombol Navigasi -->
+            <HBox alignment="CENTER" spacing="20">
+                <Button fx:id="buttonSebelumnya" onAction="#handleButtonSebelumnya" styleClass="nav-button" text="Sebelumnya" />
+                <Button fx:id="buttonSelanjutnya" onAction="#handleButtonSelanjutnya" styleClass="nav-button" text="Selanjutnya" />
+            </HBox>
+
+            <!-- Tombol Kembali -->
+            <Button fx:id="backHasilUjian" onAction="#handleBackHasilUjian" styleClass="back-button" text="Kembali ke Hasil Ujian" />
+        </VBox>
+    </content>
+</ScrollPane>

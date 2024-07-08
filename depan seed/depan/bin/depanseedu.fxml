@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.PerspectiveTransform?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seedu.MainController">
+    <content>
+        <VBox spacing="0">
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" prefHeight="104" spacing="20" style="-fx-background-color: linear-gradient(to right, #4D918F, #2C5364); -fx-padding: 10;">
+                <ImageView fitHeight="80" fitWidth="200" preserveRatio="true">
+                    <Image url="@//I:/depan%20seed/depan/logo.png" />
+                    <effect>
+                        <DropShadow color="white" radius="10" spread="0.2" />
+                    </effect>
+                </ImageView>
+                <Label styleClass="header-menu" text="Beranda" />
+                <Label styleClass="header-menu" text="Pelatihan" />
+                <Label styleClass="header-menu" text="Sertifikasi" />
+                <Label styleClass="header-menu" text="Artikel" />
+                <Label styleClass="header-menu" text="Tentang Kami" />
+                <TextField prefHeight="32.0" prefWidth="200" promptText="Cari..." styleClass="search-field">
+                    <effect>
+                        <InnerShadow choke="0.1" color="#0000001a" height="10" radius="4.5" width="10" />
+                    </effect>
+                </TextField>
+                <Button styleClass="login-button" text="Login">
+                    <effect>
+                        <DropShadow color="#00000040" radius="5" spread="0.1" />
+                    </effect>
+                </Button>
+            </HBox>
+
+            <!-- Hero Section with Parallax Effect -->
+            <StackPane>
+                <ImageView fitHeight="600" fitWidth="1440" preserveRatio="false">
+                    <Image url="@../../../SEEDU%20NEW/Pariwisata.jpg" />
+                    <effect>
+                        <PerspectiveTransform llx="0" lly="600" lrx="1440" lry="550" ulx="0" uly="0" urx="1440" ury="50" />
+                    </effect>
+                </ImageView>
+                <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+                    <effect>
+                        <DropShadow color="#00000080" radius="20" spread="0.2" />
+                    </effect>
+                    <Label styleClass="hero-title" text="Selamat Datang di SEEDU">
+                        <effect>
+                            <Bloom threshold="0.3" />
+                        </effect>
+                    </Label>
+                    <Label styleClass="hero-subtitle" text="Sistem Edukasi Lingkungan Untuk Pariwisata Berkelanjutan" />
+                    <HBox alignment="CENTER" spacing="20">
+                        <Button styleClass="cta-button" text="Mulai Belajar">
+                            <effect>
+                                <DropShadow color="#00000040" radius="10" spread="0.1" />
+                            </effect>
+                        </Button>
+                        <Button styleClass="secondary-button" text="Lihat Pelatihan">
+                            <effect>
+                                <DropShadow color="#00000040" radius="10" spread="0.1" />
+                            </effect>
+                        </Button>
+                    </HBox>
+                </VBox>
+            </StackPane>
+
+<!-- Fitur Utama with Modern Card Design -->
+<VBox spacing="40" style="-fx-padding: 60 20; -fx-background-color: linear-gradient(to bottom right, #f0f4f8, #e0e8f0);">
+    <Label styleClass="section-title" text="Keutamaan SEEDU" />
+    <HBox alignment="CENTER" spacing="30">
+        <VBox alignment="TOP_CENTER" prefWidth="250" styleClass="feature-box">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <ImageView fitHeight="80" fitWidth="80">
+                <Image url="@//I:/depan%20seed/depan/time.png" />
+            </ImageView>
+            <Label styleClass="feature-title" text="Fleksibel" />
+            <Label text="Akses pelatihan kapan saja, di mana saja" textAlignment="CENTER" wrapText="true" />
+        </VBox>
+        <VBox alignment="TOP_CENTER" prefWidth="250" styleClass="feature-box">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <ImageView fitHeight="80" fitWidth="80">
+                     <image>
+                        <Image url="@//I:/depan%20seed/depan/mentor.png" />
+                     </image></ImageView>
+            <Label styleClass="feature-title" text="Mentor Ahli" />
+            <Label text="Bimbingan langsung dari pakar industri" textAlignment="CENTER" wrapText="true" />
+        </VBox>
+        <VBox alignment="TOP_CENTER" prefWidth="250" styleClass="feature-box">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <ImageView fitHeight="80" fitWidth="80">
+                <Image url="@//I:/depan%20seed/depan/sertif.png" />
+            </ImageView>
+            <Label styleClass="feature-title" text="Sertifikasi Resmi" />
+            <Label text="Dapatkan pengakuan atas keahlian Anda" textAlignment="CENTER" wrapText="true" />
+        </VBox>
+        <VBox alignment="TOP_CENTER" prefWidth="250" styleClass="feature-box">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <ImageView fitHeight="80" fitWidth="80">
+                <Image url="@//I:/depan%20seed/depan/stream.png" />
+            </ImageView>
+            <Label styleClass="feature-title" text="Modul Video" />
+            <Label text="Streaming sesuka hati dan diskusi langsung dengan para ahli" textAlignment="CENTER" wrapText="true" />
+        </VBox>
+        <VBox alignment="TOP_CENTER" prefWidth="250" styleClass="feature-box">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <ImageView fitHeight="80" fitWidth="80">
+                <Image url="@//I:/depan%20seed/depan/konsul.png" />
+            </ImageView>
+            <Label styleClass="feature-title" text="Konsultasi" />
+            <Label text="Dapatkan saran langsung dari ahli pariwisata berkelanjutan" textAlignment="CENTER" wrapText="true" />
+        </VBox>
+    </HBox>
+</VBox>
+
+<!-- Pelatihan Populer with Dynamic Layout -->
+<VBox spacing="20" style="-fx-padding: 40 20; -fx-background-color: #ffffff;">
+    <Label styleClass="section-title" text="Pelatihan Populer" />
+    <HBox alignment="CENTER" spacing="20">
+        <VBox prefWidth="380" styleClass="course-card">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <StackPane>
+                <ImageView fitHeight="200" fitWidth="380" preserveRatio="false">
+                    <Image url="@../../../SEEDU%20NEW/7da4f78d-0bf8-4a63-9637-e3fce236e21a_169.jpeg" />
+                </ImageView>
+                <Label styleClass="trending-tag" text="#Trending" StackPane.alignment="TOP_LEFT" />
+            </StackPane>
+            <VBox spacing="10" style="-fx-padding: 15;">
+                <Label styleClass="course-title" text="Dasar-dasar Ekowisata" />
+                <Label text="Pelajari prinsip dan praktik ekowisata yang berkelanjutan" wrapText="true" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="4.5" />
+                    <ImageView fitHeight="20" fitWidth="100">
+                        <Image url="@/images/stars.png" />
+                    </ImageView>
+                    <Label text="(120 ulasan)" />
+                </HBox>
+                <Button styleClass="enroll-button" text="Daftar Sekarang">
+                    <effect>
+                        <DropShadow color="#00000040" radius="5" spread="0.1" />
+                    </effect>
+                </Button>
+            </VBox>
+        </VBox>
+        <VBox prefWidth="380" styleClass="course-card">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <StackPane>
+                <ImageView fitHeight="200" fitWidth="380" preserveRatio="false">
+                    <Image url="@../../../SEEDU%20NEW/617274e6a2fca.jpg" />
+                </ImageView>
+                <Label styleClass="trending-tag" text="#Trending" StackPane.alignment="TOP_LEFT" />
+            </StackPane>
+            <VBox spacing="10" style="-fx-padding: 15;">
+                <Label styleClass="course-title" text="Manajemen Perhotelan Berkelanjutan" />
+                <Label text="Implementasi praktik ramah lingkungan di industri perhotelan" wrapText="true" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="4.7" />
+                    <ImageView fitHeight="20" fitWidth="100">
+                        <Image url="@/images/stars.png" />
+                    </ImageView>
+                    <Label text="(98 ulasan)" />
+                </HBox>
+                <Button styleClass="enroll-button" text="Daftar Sekarang">
+                    <effect>
+                        <DropShadow color="#00000040" radius="5" spread="0.1" />
+                    </effect>
+                </Button>
+            </VBox>
+        </VBox>
+        <VBox prefWidth="380" styleClass="course-card">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <StackPane>
+                <ImageView fitHeight="200" fitWidth="380" preserveRatio="false">
+                    <Image url="@../../../SEEDU%20NEW/64d99e9b7044b820259474.jpg" />
+                </ImageView>
+                <Label styleClass="trending-tag" text="#Trending" StackPane.alignment="TOP_LEFT" />
+            </StackPane>
+            <VBox spacing="10" style="-fx-padding: 15;">
+                <Label styleClass="course-title" text="Pengembangan Pariwisata Berbasis Masyarakat" />
+                <Label text="Strategi melibatkan masyarakat lokal dalam pariwisata berkelanjutan" wrapText="true" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="4.8" />
+                    <ImageView fitHeight="20" fitWidth="100">
+                        <Image url="@/images/stars.png" />
+                    </ImageView>
+                    <Label text="(75 ulasan)" />
+                </HBox>
+                <Button styleClass="enroll-button" text="Daftar Sekarang">
+                    <effect>
+                        <DropShadow color="#00000040" radius="5" spread="0.1" />
+                    </effect>
+                </Button>
+            </VBox>
+        </VBox>
+    </HBox>
+</VBox>
+
+<!-- Testimoni with Curved Background -->
+<VBox spacing="20" style="-fx-padding: 60 20; -fx-background-color: linear-gradient(to bottom, #F0F4F8, #E0E8F0);">
+    <effect>
+        <InnerShadow choke="0.1" color="#0000001a" height="20" radius="9.5" width="20" />
+    </effect>
+    <Label styleClass="section-title" text="Apa Kata Mereka" />
+    <HBox alignment="CENTER" spacing="30">
+        <VBox prefWidth="350.0" styleClass="testimonial-card">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <ImageView fitHeight="80" fitWidth="114.0" styleClass="testimonial-image">
+                <Image url="@../../../SEEDU%20NEW/360_F_298227690_1DWTl73uxJzSOfz2Pss1urEz1XgpCCl4.jpg" />
+            </ImageView>
+            <Label text="&quot;SEEDU membuka mata saya tentang pentingnya pariwisata berkelanjutan. Kursus-kursusnya sangat informatif dan praktis.&quot;" wrapText="true" />
+            <Label styleClass="testimonial-author" text="- Sarah, Pengelola Hotel" />
+        </VBox>
+        <VBox prefWidth="350" styleClass="testimonial-card">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <ImageView fitHeight="80" fitWidth="108.0" styleClass="testimonial-image">
+                <Image url="@../../../SEEDU%20NEW/images.jpeg" />
+            </ImageView>
+            <Label text="&quot;Sertifikasi dari SEEDU membantu saya meningkatkan kredibilitas dan mendapatkan klien baru untuk bisnis tur saya.&quot;" wrapText="true" />
+            <Label styleClass="testimonial-author" text="- Budi, Pemandu Wisata Lokal" />
+        </VBox>
+        <VBox prefWidth="350" styleClass="testimonial-card">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <ImageView fitHeight="80" fitWidth="80" styleClass="testimonial-image">
+                <Image url="@../../../SEEDU%20NEW/pngtree-portrait-of-happy-smiling-young-business-woman-in-black-suit-isolated-png-image_11873106.png" />
+            </ImageView>
+            <Label text="&quot;Fitur konsultasi dengan ahli sangat membantu saya dalam menerapkan praktik ramah lingkungan di resort kami.&quot;" wrapText="true" />
+            <Label styleClass="testimonial-author" text="- Rina, Manajer Resort" />
+        </VBox>
+    </HBox>
+</VBox>
+
+<!-- Artikel Terbaru with Hover Effects -->
+<VBox spacing="20" style="-fx-padding: 40 20; -fx-background-color: #ffffff;">
+    <Label styleClass="section-title" text="Artikel Terbaru" />
+    <HBox spacing="20">
+        <VBox prefWidth="400" styleClass="article-card">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <ImageView fitHeight="250" fitWidth="400" preserveRatio="false">
+                <Image url="@../../../SEEDU%20NEW/128853D8-30DE-4447-B0A8-6EAB9BBE1080.jpeg" />
+            </ImageView>
+            <VBox spacing="10" style="-fx-padding: 15;">
+                <Label styleClass="article-title" text="Menuju Pariwisata Berkelanjutan di Indonesia" />
+                <Label text="Pelajari langkah-langkah konkret menuju pariwisata yang ramah lingkungan dan bermanfaat bagi masyarakat lokal." wrapText="true" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="article-meta" text="5 menit baca" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button styleClass="read-more-button" text="Baca Selengkapnya">
+                        <effect>
+                            <DropShadow color="#00000040" radius="5" spread="0.1" />
+                        </effect>
+                    </Button>
+                </HBox>
+            </VBox>
+        </VBox>
+        <VBox prefWidth="400" styleClass="article-card">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <ImageView fitHeight="250" fitWidth="400" preserveRatio="false">
+                <Image url="@../../../SEEDU%20NEW/1-Sistem-Energi-Surya-di-Padma-Resort-Ubud.jpg" />
+            </ImageView>
+            <VBox spacing="10" style="-fx-padding: 15;">
+                <Label styleClass="article-title" text="10 Praktik Ramah Lingkungan untuk Hotel" />
+                <Label text="Temukan cara-cara inovatif untuk mengurangi dampak lingkungan dari operasional hotel Anda." wrapText="true" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="article-meta" text="7 menit baca" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button styleClass="read-more-button" text="Baca Selengkapnya">
+                        <effect>
+                            <DropShadow color="#00000040" radius="5" spread="0.1" />
+                        </effect>
+                    </Button>
+                </HBox>
+            </VBox>
+        </VBox>
+        <VBox prefWidth="400" styleClass="article-card">
+            <effect>
+                <DropShadow color="#00000026" radius="10" spread="0.1" />
+            </effect>
+            <ImageView fitHeight="250" fitWidth="400" preserveRatio="false">
+                <Image url="@../../../SEEDU%20NEW/4026079719.jpg" />
+            </ImageView>
+            <VBox spacing="10" style="-fx-padding: 15;">
+                <Label styleClass="article-title" text="Membangun Pariwisata Berbasis Masyarakat" />
+                <Label text="Panduan lengkap untuk melibatkan masyarakat lokal dalam pengembangan destinasi wisata." wrapText="true" />
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="article-meta" text="6 menit baca" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button styleClass="read-more-button" text="Baca Selengkapnya">
+                        <effect>
+                            <DropShadow color="#00000040" radius="5" spread="0.1" />
+                        </effect>
+                    </Button>
+                </HBox>
+            </VBox>
+        </VBox>
+    </HBox>
+</VBox>
+
+            <!-- Call to Action with Gradient Background -->
+            <VBox alignment="CENTER" spacing="20" style="-fx-padding: 80 20; -fx-background-color: linear-gradient(to right, #4D918F, #2C5364);">
+                <effect>
+                    <InnerShadow choke="0.1" color="#0000001a" height="20" radius="9.5" width="20" />
+                </effect>
+                <Label styleClass="cta-title" text="Siap Untuk Memulai?" />
+                <Label styleClass="cta-subtitle" text="Bergabunglah dengan ribuan profesional pariwisata yang telah meningkatkan pengetahuan mereka tentang pariwisata berkelanjutan" textAlignment="CENTER" wrapText="true" />
+                <Button styleClass="cta-button-large" text="Daftar Sekarang">
+                    <effect>
+                        <DropShadow color="#00000040" radius="10" spread="0.1" />
+                    </effect>
+                </Button>
+            </VBox>
+
+            <!-- Footer with Modern Design -->
+            <VBox style="-fx-background-color: #1A1A1A; -fx-padding: 60 20;">
+                <HBox alignment="CENTER" spacing="40">
+                    <VBox spacing="10">
+                        <Label styleClass="footer-title" text="Tentang SEEDU" />
+                        <Label styleClass="footer-link" text="Visi &amp; Misi" />
+                        <Label styleClass="footer-link" text="Tim Kami" />
+                        <Label styleClass="footer-link" text="Karir" />
+                    </VBox>
+                    <VBox spacing="10">
+                        <Label styleClass="footer-title" text="Program" />
+                        <Label styleClass="footer-link" text="Pelatihan Online" />
+                        <Label styleClass="footer-link" text="Sertifikasi" />
+                        <Label styleClass="footer-link" text="Webinar" />
+                    </VBox>
+                    <VBox spacing="10">
+                        <Label styleClass="footer-title" text="Sumber Daya" />
+                        <Label styleClass="footer-link" text="Blog" />
+                        <Label styleClass="footer-link" text="Panduan" />
+                        <Label styleClass="footer-link" text="FAQ" />
+                    </VBox>
+                    <VBox spacing="10">
+                        <Label styleClass="footer-title" text="Kontak" />
+                        <Label styleClass="footer-link" text="info@seedu.com" />
+                        <Label styleClass="footer-link" text="+62 123 4567 890" />
+                        <HBox spacing="10">
+                            <ImageView fitHeight="24" fitWidth="24">
+                                <Image url="@/images/icon_facebook.png" />
+                            </ImageView>
+                            <ImageView fitHeight="24" fitWidth="24">
+                                <Image url="@/images/icon_twitter.png" />
+                            </ImageView>
+                            <ImageView fitHeight="24" fitWidth="24">
+                                <Image url="@/images/icon_instagram.png" />
+                            </ImageView>
+                        </HBox>
+                    </VBox>
+                </HBox>
+                <Separator style="-fx-background-color: #333333;" />
+                <HBox alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+                    <Label styleClass="copyright-text" text="© 2024 SEEDU. Hak Cipta Dilindungi." />
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

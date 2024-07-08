@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<StackPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.CreataccPeserta">
+    <HBox>
+        <!-- Left Side - Image and Overlay -->
+        <StackPane styleClass="image-container" HBox.hgrow="ALWAYS">
+            <ImageView fitHeight="85.0" fitWidth="182.0" preserveRatio="false">
+            <image>
+               <Image url="@../image/loginPage/logoSeedu.png" />
+            </image></ImageView>
+            <VBox alignment="CENTER" prefHeight="898.0" prefWidth="301.0" styleClass="image-overlay" />
+        </StackPane>
+        
+        <!-- Right Side - Form -->
+        <ScrollPane fitToHeight="true" fitToWidth="true" HBox.hgrow="ALWAYS">
+            <VBox alignment="CENTER" styleClass="form-container">
+                <Text styleClass="form-title" text="Create Student Account" wrappingWidth="337.958984375" />
+                
+                <VBox spacing="20" styleClass="form-content">
+                    <TextField fx:id="username" promptText="Username" styleClass="input-field" />
+                    <TextField fx:id="fullName" promptText="Full Name" styleClass="input-field" />
+                    <ComboBox fx:id="gender" prefWidth="412.0" promptText="Gender" styleClass="input-field" />
+                    <DatePicker fx:id="dateOfBirth" prefWidth="452.0" promptText="Date of Birth" styleClass="input-field" />
+                    <TextField fx:id="phoneNumber" promptText="Phone Number" styleClass="input-field" />
+                    <TextField fx:id="email" promptText="Email" styleClass="input-field" />
+                    <PasswordField fx:id="password" promptText="Password" styleClass="input-field" />
+                    <PasswordField fx:id="confirmPassword" promptText="Confirm Password" styleClass="input-field" />
+                    
+                    <CheckBox fx:id="agreementCheckbox" styleClass="agreement-checkbox" text="I agree to the Terms of Service and Privacy Policy" />
+                    
+                    <Button fx:id="createAccountButton" onAction="#handleCreateAccount" styleClass="create-account-button" text="Create Student Account" />
+                    
+                    <HBox alignment="CENTER" spacing="10" styleClass="login-container">
+                        <Text text="Already have an account?" />
+                        <Hyperlink onAction="#handleLogin" styleClass="login-link" text="Log In" />
+                    </HBox>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </HBox>
+</StackPane>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.Pembayaran">
+    <content>
+        <VBox spacing="30" styleClass="main-container">
+            <!-- Header -->
+            <HBox styleClass="header">
+                <ImageView fitHeight="36.0" fitWidth="113.0" preserveRatio="true">
+                    <Image url="@../image/loginPage/logoSeedu.png" />
+                </ImageView>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label styleClass="header-title" text="Pembayaran" />
+                <Region HBox.hgrow="ALWAYS" />
+                <StackPane styleClass="profile-button-container" />
+            </HBox>
+
+            <!-- Payment Information -->
+            <VBox prefHeight="419.0" prefWidth="1534.0" styleClass="payment-info-container">
+                <HBox alignment="CENTER_LEFT" spacing="15">
+                    <ImageView fitHeight="50" fitWidth="50">
+                        <Image url="@../image/lain%20lain/belnaja.png" />
+                    </ImageView>
+                    <VBox>
+                        <Label styleClass="payment-deadline" text="Pay before JUNE 22, 2024 at 5:00 PM" />
+                        <Label styleClass="invoice-number" text="Invoice #752527235" />
+                    </VBox>
+                </HBox>
+                <Label styleClass="total-amount-large" text="Rp. 2.500.000" />
+
+                <VBox styleClass="order-summary">
+                    <Label styleClass="section-title" text="Order Summary" />
+                    <GridPane styleClass="order-grid" vgap="15">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+                        </columnConstraints>
+                        <Label text="Pariwisata Berkelanjutan" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label styleClass="amount" text="Rp. 2.500.000" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Separator GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                        <Label styleClass="total-label" text="Total" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label styleClass="total-amount" text="Rp. 2.500.000" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                    </GridPane>
+                </VBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="pay-before">
+                    <ImageView fitHeight="24" fitWidth="24">
+                        <Image url="@images/clock-icon.png" />
+                    </ImageView>
+                    <Label text="Pay Before" />
+                    <Label styleClass="pay-before-date" text="June 22, 2024 at 5:00 PM" />
+                </HBox>
+            </VBox>
+
+            <!-- Payment Methods -->
+            <VBox styleClass="payment-methods-container">
+                <Label styleClass="section-title" text="Payment Methods" />
+                <VBox spacing="15">
+                    <RadioButton styleClass="payment-method">
+                        <graphic>
+                            <HBox alignment="CENTER_LEFT" spacing="15">
+                                <ImageView fitHeight="40" fitWidth="40">
+                                    <Image url="@../image/lain%20lain/bank.png" />
+                                </ImageView>
+                                <VBox>
+                                    <Label styleClass="payment-method-title" text="Bank Transfer" />
+                                    <Label styleClass="payment-method-subtitle" text="Pay with Bank Transfer" />
+                                </VBox>
+                            </HBox>
+                        </graphic>
+                    </RadioButton>
+                    <RadioButton styleClass="payment-method">
+                        <graphic>
+                            <HBox alignment="CENTER_LEFT" spacing="15">
+                                <ImageView fitHeight="40" fitWidth="40">
+                                    <Image url="@../image/lain%20lain/uwaete.png" />
+                                </ImageView>
+                                <VBox>
+                                    <Label styleClass="payment-method-title" text="E-Wallet" />
+                                    <Label styleClass="payment-method-subtitle" text="Pay with E-Wallet" />
+                                </VBox>
+                            </HBox>
+                        </graphic>
+                    </RadioButton>
+                    <RadioButton styleClass="payment-method">
+                        <graphic>
+                            <HBox alignment="CENTER_LEFT" spacing="15">
+                                <ImageView fitHeight="40" fitWidth="40">
+                                    <Image url="@../image/lain%20lain/qr.png" />
+                                </ImageView>
+                                <VBox>
+                                    <Label styleClass="payment-method-title" text="QR Payment" />
+                                    <Label styleClass="payment-method-subtitle" text="Pay with QR Payment" />
+                                </VBox>
+                            </HBox>
+                        </graphic>
+                    </RadioButton>
+                </VBox>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER_RIGHT" spacing="20">
+                <Button fx:id="buttonCancel" onAction="#handleButtonCancel" styleClass="cancel-button" text="Batal" />
+                <Button fx:id="buttonBayar" onAction="#handleButtonBayar" styleClass="pay-button" text="Bayar " />
+            </HBox>
+        </VBox>
+    </content>
+</ScrollPane>

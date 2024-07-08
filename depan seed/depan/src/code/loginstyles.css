@@ -1,0 +1,76 @@
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.login-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-background-radius: 20;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 0);
+}
+
+.welcome-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C5364;
+}
+
+.input-field {
+    -fx-background-color: #f0f4f8;
+    -fx-background-radius: 30;
+    -fx-border-color: #e0e8f0;
+    -fx-border-radius: 30;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+}
+
+.login-button {
+    -fx-background-color: linear-gradient(to right, #4D918F, #2C5364);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);
+}
+
+.login-button:hover {
+    -fx-background-color: linear-gradient(to right, #3A7A78, #1A4253);
+}
+
+.forgot-password, .register-link {
+    -fx-text-fill: #4D918F;
+    -fx-font-size: 14px;
+    -fx-border-color: transparent;
+}
+
+.or-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+.social-button {
+    -fx-background-radius: 50%;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-background-size: 60%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-cursor: hand;
+}
+
+.google-button {
+    -fx-background-image: url('images/google-icon.png');
+}
+
+.facebook-button {
+    -fx-background-image: url('images/facebook-icon.png');
+}
+
+.twitter-button {
+    -fx-background-image: url('images/twitter-icon.png');
+}
+
+.social-button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 0);
+}

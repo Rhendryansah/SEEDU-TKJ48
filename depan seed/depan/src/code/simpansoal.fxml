@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20" style="-fx-padding: 30; -fx-background-color: #F0F4F8;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView fitHeight="100" fitWidth="100">
+        <Image url="@/images/success_icon.png" />
+    </ImageView>
+    
+    <Label styleClass="confirmation-title" text="Soal Berhasil Disimpan" />
+    
+    <VBox spacing="10" styleClass="question-preview">
+        <Label styleClass="preview-label" text="Pertanyaan:" />
+        <Label styleClass="preview-content" text="Apa yang dimaksud dengan pariwisata berkelanjutan?" wrapText="true" />
+        
+        <Label styleClass="preview-label" text="Modul:" />
+        <Label styleClass="preview-content" text="Pengantar Pariwisata" />
+        
+        <Label styleClass="preview-label" text="Tingkat Kesulitan:" />
+        <Label styleClass="preview-content" text="Mudah" />
+    </VBox>
+    
+    <HBox alignment="CENTER" spacing="20">
+        <Button fx:id="btnTambahSoal" styleClass="action-button" text="Tambah Soal Lain" />
+        <Button fx:id="btnKembali" styleClass="action-button" text="Kembali ke Daftar Soal" />
+    </HBox>
+</VBox>

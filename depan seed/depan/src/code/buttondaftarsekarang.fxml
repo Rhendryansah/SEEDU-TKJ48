@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.buttondaftarsekarang">
+    <content>
+        <VBox spacing="20" styleClass="main-container">
+            <!-- Header (same as main page) -->
+            <HBox styleClass="header">
+                <ImageView fitHeight="50" fitWidth="50" preserveRatio="true">
+                    <Image url="@images/logo.png" />
+                </ImageView>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="buttonBeranda" onAction="#handleButtonBeranda" styleClass="nav-button" text="Beranda" />
+                <Button fx:id="buttonPelatihan" onAction="#handleButtonPelatihan" styleClass="nav-button, active-nav-button" text="Pelatihan" />
+                <Button fx:id="buttonSertifikasi" onAction="#handleButtonSertifikasi" styleClass="nav-button" text="Sertifikasi" />
+                <Button fx:id="buttonArtikel" onAction="#handleButtonArtikel" styleClass="nav-button" text="Artikel" />
+                <Button fx:id="buttonProfil" onAction="#handleButtonProfil" styleClass="nav-button" text="Profil" />
+                <Button fx:id="buttonKeluar" onAction="#handleButtonKeluar" styleClass="nav-button, logout-button" text="Keluar" />
+            </HBox>
+
+            <!-- Course Title and Image -->
+            <VBox alignment="CENTER" styleClass="course-header">
+                <ImageView fitWidth="800" preserveRatio="true">
+                    <Image url="@images/sustainable-tourism.jpg" />
+                </ImageView>
+                <Label styleClass="course-title" text="Pariwisata Berkelanjutan" />
+            </VBox>
+
+            <!-- Course Details -->
+            <HBox spacing="20">
+                <VBox spacing="15" HBox.hgrow="ALWAYS">
+                    <Label styleClass="section-title" text="Deskripsi Pelatihan" />
+                    <Text wrappingWidth="600">
+                        Pelatihan Pariwisata Berkelanjutan ini dirancang untuk membekali Anda dengan pengetahuan dan keterampilan yang diperlukan untuk mengembangkan dan mengelola destinasi wisata yang ramah lingkungan, mendukung komunitas lokal, dan memberikan pengalaman yang autentik bagi wisatawan. Kursus ini mencakup aspek-aspek kunci dari pariwisata berkelanjutan, termasuk manajemen sumber daya alam, pelestarian budaya, dan pemberdayaan masyarakat.
+                    </Text>
+
+                    <Label styleClass="section-title" text="Apa yang Akan Anda Pelajari" />
+                    <VBox spacing="10">
+                        <Label styleClass="bullet-point" text="• Prinsip-prinsip dasar pariwisata berkelanjutan" />
+                        <Label styleClass="bullet-point" text="• Strategi pengembangan destinasi wisata ramah lingkungan" />
+                        <Label styleClass="bullet-point" text="• Teknik pelibatan dan pemberdayaan masyarakat lokal" />
+                        <Label styleClass="bullet-point" text="• Manajemen dampak lingkungan dan sosial-budaya" />
+                        <Label styleClass="bullet-point" text="• Pemasaran dan branding untuk pariwisata berkelanjutan" />
+                        <Label styleClass="bullet-point" text="• Sertifikasi dan standar internasional dalam pariwisata berkelanjutan" />
+                    </VBox>
+                </VBox>
+
+                <!-- Course Info and Payment -->
+                <VBox spacing="15" styleClass="course-info-container">
+                    <Label styleClass="info-title" text="Informasi Pelatihan" />
+                    <VBox spacing="10">
+                        <Label text="Durasi: 8 minggu" />
+                        <Label text="Level: Menengah" />
+                        <Label text="Bahasa: Bahasa Indonesia" />
+                        <Label text="Sertifikat: Ya" />
+                    </VBox>
+                    <Label styleClass="price" text="Harga: Rp 2.500.000" />
+                    <Button fx:id="buttonBayarSekarang" onAction="#handleButtonBayarSekarang" styleClass="enroll-button" text="Bayar Sekarang" />
+                </VBox>
+            </HBox>
+
+            <!-- Course Content -->
+            <VBox spacing="15">
+                <Label styleClass="section-title" text="Materi Pelatihan" />
+                <Accordion>
+                    <panes>
+                        <TitledPane animated="false" text="Minggu 1: Pengantar Pariwisata Berkelanjutan">
+                            <VBox spacing="5">
+                                <Label text="• Definisi dan konsep dasar" />
+                                <Label text="• Sejarah dan perkembangan pariwisata berkelanjutan" />
+                                <Label text="• Tantangan dan peluang dalam industri" />
+                            </VBox>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Minggu 2: Manajemen Sumber Daya Alam">
+                            <VBox spacing="5">
+                                <Label text="• Konservasi ekosistem" />
+                                <Label text="• Pengelolaan sampah dan limbah" />
+                                <Label text="• Energi terbarukan dalam pariwisata" />
+                            </VBox>
+                        </TitledPane>
+                        <!-- Add more TitledPanes for other weeks -->
+                    </panes>
+                </Accordion>
+            </VBox>
+
+            <!-- Testimonials -->
+            <VBox spacing="15">
+                <Label styleClass="section-title" text="Testimoni Alumni" />
+                <HBox spacing="20">
+                    <VBox styleClass="testimonial-card">
+                        <Label styleClass="testimonial-name" text="Budi Santoso" />
+                        <Text text="Pelatihan ini membuka mata saya tentang pentingnya pariwisata berkelanjutan. Sangat inspiratif dan praktis!" wrappingWidth="300">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin></Text>
+                    </VBox>
+                    <VBox styleClass="testimonial-card">
+                        <Label styleClass="testimonial-name" text="Rina Wijaya">
+                     <VBox.margin>
+                        <Insets bottom="-20.0" />
+                     </VBox.margin></Label>
+                        <Text text="Materi yang komprehensif dan instruktur yang berpengalaman. Saya merasa lebih siap untuk menerapkan konsep berkelanjutan di destinasi wisata kami." wrappingWidth="300" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Gallery -->
+            <VBox spacing="15">
+                <Label styleClass="section-title" text="Galeri Pelatihan" />
+                <HBox prefHeight="150.0" prefWidth="1321.0" spacing="10">
+                    <ImageView fitHeight="150" fitWidth="239.0" styleClass="gallery-image">
+                        <Image url="@../../../gambar/f8ff8497-d01a-403e-a4fb-4560899f9344_169.jpg" />
+                    </ImageView>
+                    <ImageView fitHeight="150" fitWidth="145.0" styleClass="gallery-image">
+                        <Image url="@../../../gambar/images%20(2).jpeg" />
+                    </ImageView>
+                    <ImageView fitHeight="150" fitWidth="200" styleClass="gallery-image">
+                        <Image url="@../../../gambar/O9PG56kAe7.jpg" />
+                    </ImageView>
+                    <ImageView fitHeight="150" fitWidth="200" styleClass="gallery-image">
+                        <Image url="@../../../gambar/diverse-friends-students-shoot-53876-47012-1fe1e81b6b5eb12cd79fd081e7dc3c0f.jpg" />
+                    </ImageView>
+               <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../gambar/d56dfaa21aa1.jpg" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="151.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../gambar/tour-guide-1.jpg" />
+                  </image>
+               </ImageView>
+                </HBox>
+            </VBox>
+
+            <!-- Footer (same as main page) -->
+            <VBox styleClass="footer">
+                <HBox alignment="CENTER" spacing="20">
+                    <Label text="© 2024 SEEDU" />
+                    <Label styleClass="footer-link" text="Kebijakan Privasi" />
+                    <Label styleClass="footer-link" text="Syarat dan Ketentuan" />
+                    <Label styleClass="footer-link" text="Hubungi Kami" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

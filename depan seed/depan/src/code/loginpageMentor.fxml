@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="800.0" prefWidth="1550.0" stylesheets="@loginStyles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.loginpageMentor">
+    <children>
+        <StackPane styleClass="image-container">
+            <ImageView fitHeight="803.0" fitWidth="889.0" opacity="0.32" preserveRatio="false">
+            <image>
+               <Image url="@../image/loginPageMentor/10704136_44199.jpg" />
+            </image>
+            </ImageView>
+            <VBox alignment="CENTER" prefHeight="771.0" prefWidth="706.0" styleClass="image-overlay">
+                <Label prefHeight="27.0" prefWidth="159.0" style="-fx-font-size: 20; -fx-font-family: calibri; -fx-font-weight: bold;" styleClass="overlay-text" text="Selamat Datang di">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+                <ImageView fitHeight="104.0" fitWidth="284.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/loginPageMentor/logoSeedu.png" />
+                    </image>
+                </ImageView>
+            </VBox>
+        </StackPane>
+        
+        <VBox alignment="CENTER" prefHeight="803.0" prefWidth="803.0" spacing="20" styleClass="login-panel">
+            <Label styleClass="login-title" text="Masuk ke Akun Anda" />
+            
+            <TextField fx:id="inputEmailMentor" promptText="Email" styleClass="input-field" />
+            <PasswordField fx:id="inputPasswordMentor" promptText="Password" styleClass="input-field" />
+            
+            <Button fx:id="tombolLogin" onAction="#handleLogin" styleClass="login-button" text="Masuk" />
+            
+            <HBox alignment="CENTER" spacing="10">
+                <Hyperlink fx:id="hyperLupaPassword" onAction="#handleLupaPassword" styleClass="forgot-password" text="Lupa Password?" />
+                <Circle fill="#4D918F" radius="3" />
+                <Hyperlink fx:id="hyperRegisterMentor" onAction="#handleRegisterMentor" styleClass="register-link" text="Daftar Akun Baru" />
+            </HBox>
+            
+            <VBox alignment="CENTER" spacing="10" styleClass="social-login">
+                <Label styleClass="or-text" text="Atau masuk dengan" />
+                <HBox alignment="CENTER" spacing="20">
+                </HBox>
+            </VBox>
+        </VBox>
+    </children>
+</HBox>

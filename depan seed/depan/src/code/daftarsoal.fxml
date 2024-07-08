@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.daftarsoal">
+    <content>
+        <VBox spacing="30" styleClass="main-background">
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="20" styleClass="mentor-header">
+                <padding>
+                    <Insets bottom="20" left="30" right="30" top="20" />
+                </padding>
+                <ImageView fitHeight="60" fitWidth="49.0">
+                    <Image url="@../image/lain%20lain/formalguy1.png" />
+                </ImageView>
+                <VBox>
+                    <Label styleClass="mentor-title" text="Panel Mentor" />
+                    <Label styleClass="mentor-subtitle" text="Daftar Soal Ujian" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label styleClass="mentor-name" text="Selamat datang, Dr. Suharto" />
+            </HBox>
+
+            <!-- Main Content -->
+            <VBox spacing="30" styleClass="content-area">
+                <padding>
+                    <Insets bottom="30" left="30" right="30" top="20" />
+                </padding>
+                
+                <!-- Search and Add Question -->
+                <HBox alignment="CENTER" spacing="20">
+                    <TextField fx:id="tfCariSoal" promptText="Cari soal..." styleClass="search-field" HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnCari" onAction="#ButtonCariAction" styleClass="search-button" text="Cari" />
+                    <Button fx:id="btnTambahSoal" onAction="#ButtonTambahSoalAction" styleClass="add-question-button" text="+ Tambah Soal" />
+                </HBox>
+                
+                <!-- Question List -->
+                <VBox spacing="20" styleClass="question-list-container">
+                    <Label styleClass="section-title" text="Daftar Soal" />
+                    
+                    <TableView fx:id="tabelDaftarSoal" styleClass="question-table">
+                        <columns>
+                            <TableColumn fx:id="daftarNo" prefWidth="50" styleClass="column-no" text="No." />
+                            <TableColumn fx:id="daftarPertanyaan" prefWidth="256.0" styleClass="column-question" text="Pertanyaan" />
+                            <TableColumn fx:id="daftarModul" prefWidth="197.0" styleClass="column-module" text="Modul" />
+                            <TableColumn fx:id="daftarTingkatKesulitan" prefWidth="247.0" styleClass="column-difficulty" text="Tingkat Kesulitan" />
+                            <TableColumn fx:id="daftarAksi" prefWidth="120.0" styleClass="column-action" text="Aksi" />
+                        </columns>
+                    </TableView>
+                    
+                    <HBox alignment="CENTER">
+                        <Pagination styleClass="custom-pagination" />
+                    </HBox>
+                </VBox>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

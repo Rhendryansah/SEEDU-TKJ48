@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.profilementor">
+    <content>
+        <VBox spacing="30" styleClass="main-container">
+            <!-- Header -->
+            <HBox styleClass="header">
+                <ImageView fitHeight="40" fitWidth="86.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/loginPage/logoSeedu.png" />
+                    </image>
+                </ImageView>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="buttonBeranda" onAction="#handleButtonBeranda" styleClass="nav-button" text="Beranda" />
+                <Button fx:id="buttonKelolaPelatihan" onAction="#handleButtonKelolaPelatihan" styleClass="nav-button" text="Kelola Pelatihan" />
+                <Button fx:id="buttonArtikel" onAction="#handleButtonArtikel" styleClass="nav-button" text="Artikel" />
+                <Button fx:id="buttonProfil" onAction="#handleButtonProfil" text="Profil">
+                    <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="accordion" />
+                    </styleClass>
+                </Button>
+                <Button styleClass="nav-button, logout-button" text="Keluar" />
+            </HBox>
+
+            <!-- Profil Header -->
+            <HBox alignment="CENTER_LEFT" spacing="20" styleClass="profile-header">
+                <StackPane>
+                    <Circle fill="white" radius="60" />
+                    <ImageView fitHeight="176.0" fitWidth="160.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../image/lain%20lain/formalguy2.png" />
+                        </image>
+                    </ImageView>
+                </StackPane>
+                <VBox spacing="5">
+                    <Label styleClass="profile-name" text="Dr. Agus Wijaya" />
+                    <Label styleClass="profile-title" text="Mentor Senior" />
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label styleClass="profile-info" text="Bergabung: 5 Mar 2020" />
+                        <Circle fill="#888888" radius="3" />
+                        <Label styleClass="profile-info" text="ID: M-7890" />
+                    </HBox>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="buttonEditProfil" onAction="#handleButtonEditProfil" styleClass="edit-profile-button" text="Edit Profil" />
+            </HBox>
+
+            <!-- Informasi Profil -->
+            <HBox spacing="20">
+                <VBox spacing="20" styleClass="profile-section" HBox.hgrow="ALWAYS">
+                    <Label styleClass="section-title" text="Informasi Pribadi" />
+                    <GridPane hgap="20" vgap="10">
+                        <Label styleClass="info-label" text="Nama Lengkap:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label styleClass="info-value" text="Dr. Agus Wijaya" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        
+                        <Label styleClass="info-label" text="Bidang Keahlian:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label styleClass="info-value" text="Ekowisata dan Konservasi Lingkungan" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        
+                        <Label styleClass="info-label" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label styleClass="info-value" text="agus.wijaya@seedu.com" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        
+                        <Label styleClass="info-label" text="No. Telepon:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label styleClass="info-value" text="+62 811 2345 6789" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <columnConstraints>
+                            <ColumnConstraints />
+                            <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                        </rowConstraints>
+                    </GridPane>
+                </VBox>
+                
+                <VBox spacing="20" styleClass="profile-section" HBox.hgrow="ALWAYS">
+                    <Label styleClass="section-title" text="Latar Belakang Pendidikan" />
+                    <VBox spacing="10">
+                        <Label styleClass="education-item" text="S3 Ilmu Lingkungan" />
+                        <Label styleClass="education-info" text="Universitas Gadjah Mada, 2010 - 2014" />
+                    </VBox>
+                    <VBox spacing="10">
+                        <Label styleClass="education-item" text="S2 Manajemen Ekowisata" />
+                        <Label styleClass="education-info" text="Universitas Indonesia, 2005 - 2007" />
+                    </VBox>
+                </VBox>
+            </HBox>
+
+            <!-- Pelatihan yang Diampu -->
+            <VBox spacing="20" styleClass="profile-section">
+                <Label styleClass="section-title" text="Pelatihan yang Diampu" />
+                <HBox spacing="20">
+                    <VBox spacing="10" styleClass="training-card" HBox.hgrow="ALWAYS">
+                        <Label styleClass="training-title" text="Pengelolaan Ekowisata Berkelanjutan" />
+                        <Label styleClass="training-info" text="Jumlah Peserta: 50" />
+                        <Label styleClass="training-info" text="Rating: 4.8/5.0" />
+                    </VBox>
+                    <VBox spacing="10" styleClass="training-card" HBox.hgrow="ALWAYS">
+                        <Label styleClass="training-title" text="Konservasi Lingkungan untuk Ekowisata" />
+                        <Label styleClass="training-info" text="Jumlah Peserta: 35" />
+                        <Label styleClass="training-info" text="Rating: 4.7/5.0" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Pencapaian -->
+            <VBox spacing="20" styleClass="profile-section">
+                <Label styleClass="section-title" text="Pencapaian" />
+                <HBox alignment="CENTER" spacing="20">
+                    <VBox alignment="CENTER" styleClass="achievement-card">
+                        <ImageView fitHeight="64" fitWidth="64" preserveRatio="true" />
+                        <Label styleClass="achievement-count" text="5" />
+                        <Label styleClass="achievement-label" text="Pelatihan Diampu" />
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="achievement-card">
+                        <ImageView fitHeight="64" fitWidth="64" preserveRatio="true" />
+                        <Label styleClass="achievement-count" text="200+" />
+                        <Label styleClass="achievement-label" text="Peserta Dibimbing" />
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="achievement-card">
+                        <ImageView fitHeight="64" fitWidth="64" preserveRatio="true" />
+                        <Label styleClass="achievement-count" text="4.8" />
+                        <Label styleClass="achievement-label" text="Rating Rata-rata" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Footer -->
+            <VBox styleClass="footer">
+                <HBox alignment="CENTER" spacing="20">
+                    <Label text="© 2024 SEEDU" />
+                    <Label styleClass="footer-link" text="Kebijakan Privasi" />
+                    <Label styleClass="footer-link" text="Syarat dan Ketentuan" />
+                    <Label styleClass="footer-link" text="Hubungi Kami" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="10" styleClass="social-media-links">
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true" />
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true" />
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

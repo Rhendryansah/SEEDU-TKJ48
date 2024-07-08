@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <content>
+        <VBox spacing="30" style="-fx-padding: 30; -fx-background-color: #F0F4F8;">
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="20" styleClass="exam-header">
+                <ImageView fitHeight="84.0" fitWidth="68.0">
+                    <Image url="@../image/lain%20lain/3d47576631dfd5531e34c249aeab36ee-removebg-preview.png" />
+                </ImageView>
+                <VBox>
+                    <Label styleClass="exam-title" text="Ujian Pariwisata Berkelanjutan" />
+                    <Label styleClass="exam-subtitle" text="Modul: Pengantar Pariwisata Berkelanjutan" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label styleClass="timer" text="Waktu Tersisa: 01:30:00" />
+            </HBox>
+
+            <!-- Progress -->
+            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="progress-bar">
+                <Label text="Progres:" />
+                <ProgressBar prefWidth="200" progress="0.3" />
+                <Label text="6 dari 20 soal" />
+            </HBox>
+
+            <!-- Question Container -->
+            <VBox spacing="20" styleClass="question-container">
+                <Label styleClass="question-number" text="Soal 7 dari 20" />
+                <Label styleClass="question-text" text="Apakah yang dimaksud dengan konsep 'daya dukung' dalam konteks pariwisata berkelanjutan?" wrapText="true" />
+                
+                <VBox spacing="10" styleClass="options-container">
+                    <RadioButton styleClass="option" text="A. Jumlah maksimum wisatawan yang dapat diakomodasi oleh sebuah destinasi" />
+                    <RadioButton styleClass="option" text="B. Kapasitas infrastruktur pariwisata di suatu daerah" />
+                    <RadioButton styleClass="option" text="C. Kemampuan lingkungan dan masyarakat untuk menampung aktivitas pariwisata tanpa dampak negatif" />
+                    <RadioButton styleClass="option" text="D. Batas minimal wisatawan yang dibutuhkan untuk mendukung ekonomi lokal" />
+                </VBox>
+            </VBox>
+
+            <!-- Navigation Buttons -->
+            <HBox alignment="CENTER" spacing="15">
+                <Button fx:id="buttonSebelum" onAction="#handleButtonSebelum" styleClass="nav-button" text="Sebelumnya" />
+                <Button fx:id="buttonSelanjutnya" onAction="#handleButtonSelanjutnya" styleClass="nav-button" text="Selanjutnya" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="tandaiSoal" onAction="#handleTandaiSoal" styleClass="flag-button" text="Tandai Soal" />
+            </HBox>
+
+            <!-- Question Navigator -->
+            <VBox spacing="10" styleClass="question-navigator">
+                <Label styleClass="navigator-title" text="Navigasi Soal" />
+                <FlowPane hgap="10" vgap="10">
+                    <Button styleClass="question-number-button, answered" text="1" />
+                    <Button styleClass="question-number-button, answered" text="2" />
+                    <Button styleClass="question-number-button, answered" text="3" />
+                    <Button styleClass="question-number-button, answered" text="4" />
+                    <Button styleClass="question-number-button, answered" text="5" />
+                    <Button styleClass="question-number-button, flagged" text="6" />
+                    <Button styleClass="question-number-button, current" text="7" />
+                    <Button styleClass="question-number-button" text="8" />
+                    <Button styleClass="question-number-button" text="9" />
+                    <Button styleClass="question-number-button" text="10" />
+                    <!-- ... tambahkan button untuk soal lainnya ... -->
+                </FlowPane>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER" spacing="15">
+                <Button fx:id="buttonSelesai" onAction="#handleButtonSelesai" styleClass="action-button, submit-button" text="Selesai &amp; Kirim" />
+                <Button fx:id="buttonTinjau" onAction="#handleButtonTinjau" styleClass="action-button, review-button" text="Tinjau Jawaban" />
+            </HBox>
+        </VBox>
+    </content>
+</ScrollPane>

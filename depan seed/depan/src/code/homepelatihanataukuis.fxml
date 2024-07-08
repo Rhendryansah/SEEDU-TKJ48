@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.homepelatihanataukuis">
+    <content>
+        <VBox spacing="30" style="-fx-padding: 30;">
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <ImageView fitHeight="97.0" fitWidth="82.0">
+               <image>
+                  <Image url="@../image/lain%20lain/3d47576631dfd5531e34c249aeab36ee-removebg-preview.png" />
+               </image></ImageView>
+                <VBox>
+                    <Label style="-fx-background-color: orange;" styleClass="welcome-text" text="Selamat datang, Jaden!" />
+                    <Label styleClass="subheader-text" text="Paket Pelatihan: Pariwisata Berkelanjutan" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="buttonKembali" onAction="#handleButtonKembali" styleClass="header-button" text="Kembali" />
+            </HBox>
+
+            <!-- Progress Overview -->
+            <VBox spacing="15" styleClass="progress-card">
+                <Label styleClass="card-title" text="Perkembangan Pelatihan" />
+                <ProgressBar progress="0.6" styleClass="overall-progress" />
+                <HBox spacing="20">
+                    <VBox styleClass="progress-stat" HBox.hgrow="ALWAYS">
+                        <Label styleClass="stat-value" text="60%" />
+                        <Label styleClass="stat-label" text="Progress Keseluruhan" />
+                    </VBox>
+                    <VBox styleClass="progress-stat" HBox.hgrow="ALWAYS">
+                        <Label styleClass="stat-value" text="0/5" />
+                        <Label styleClass="stat-label" text="SubTest Selesai" />
+                    </VBox>
+                    <VBox styleClass="progress-stat" HBox.hgrow="ALWAYS">
+                        <Label styleClass="stat-value" text="15" />
+                        <Label styleClass="stat-label" text="Jam Belajar" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+<!-- Mata Pelajaran -->
+<Label styleClass="section-title" text="Mata Pelajaran" />
+<VBox spacing="15">
+    <!-- Mata Pelajaran 1 -->
+    <HBox spacing="15" styleClass="course-card">
+        <ImageView fitHeight="80" fitWidth="80" />
+        <VBox HBox.hgrow="ALWAYS">
+            <Label styleClass="course-title" text="Pengantar Pariwisata Berkelanjutan" />
+            <Label styleClass="mentor-name" text="Mentor: Dr. Siti Rahma" />
+            <ProgressBar progress="0.8" styleClass="course-progress" />
+            <HBox spacing="10">
+                <Label styleClass="progress-text" text="Progress: 80%" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnLanjutkan1" styleClass="continue-button" text="Lanjutkan" />
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <!-- Mata Pelajaran 2 -->
+    <HBox spacing="15" styleClass="course-card">
+        <ImageView fitHeight="80" fitWidth="80" />
+        <VBox HBox.hgrow="ALWAYS">
+            <Label styleClass="course-title" text="Manajemen Destinasi Wisata Ramah Lingkungan" />
+            <Label styleClass="mentor-name" text="Mentor: Prof. Budi Santoso" />
+            <ProgressBar progress="0.6" styleClass="course-progress" />
+            <HBox spacing="10">
+                <Label styleClass="progress-text" text="Progress: 60%" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnLanjutkan2" styleClass="continue-button" text="Lanjutkan" />
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <!-- Mata Pelajaran 3 -->
+    <HBox spacing="15" styleClass="course-card">
+        <ImageView fitHeight="80" fitWidth="80" />
+        <VBox HBox.hgrow="ALWAYS">
+            <Label styleClass="course-title" text="Ekowisata dan Konservasi Alam" />
+            <Label styleClass="mentor-name" text="Mentor: Dr. Rina Wijaya" />
+            <ProgressBar progress="0.4" styleClass="course-progress" />
+            <HBox spacing="10">
+                <Label styleClass="progress-text" text="Progress: 40%" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnLanjutkan3" styleClass="continue-button" text="Lanjutkan" />
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <!-- Mata Pelajaran 4 -->
+    <HBox spacing="15" styleClass="course-card">
+        <ImageView fitHeight="80" fitWidth="80" />
+        <VBox HBox.hgrow="ALWAYS">
+            <Label styleClass="course-title" text="Pemberdayaan Masyarakat dalam Pariwisata" />
+            <Label styleClass="mentor-name" text="Mentor: Dra. Maya Putri" />
+            <ProgressBar progress="0.2" styleClass="course-progress" />
+            <HBox spacing="10">
+                <Label styleClass="progress-text" text="Progress: 20%" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnLanjutkan4" styleClass="continue-button" text="Lanjutkan" />
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <!-- Mata Pelajaran 5 -->
+    <HBox spacing="15" styleClass="course-card">
+        <ImageView fitHeight="80" fitWidth="80" />
+        <VBox HBox.hgrow="ALWAYS">
+            <Label styleClass="course-title" text="Inovasi Teknologi dalam Pariwisata Berkelanjutan" />
+            <Label styleClass="mentor-name" text="Mentor: Ir. Arif Pratama" />
+            <ProgressBar progress="0.0" styleClass="course-progress" />
+            <HBox spacing="10">
+                <Label styleClass="progress-text" text="Progress: 0%" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnLanjutkan5" styleClass="start-button" text="Mulai" />
+            </HBox>
+        </VBox>
+    </HBox>
+</VBox>
+            <!-- Statistik Belajar -->
+            <VBox spacing="15" styleClass="stats-card">
+                <Label styleClass="card-title" text="Statistik Belajar" />
+                <HBox spacing="20">
+                    <PieChart fx:id="learningStats" legendVisible="false" title="Distribusi Waktu Belajar" />
+                    <VBox spacing="10">
+                        <Label styleClass="stat-label" text="Total Jam Belajar: 45 jam" />
+                        <Label styleClass="stat-label" text="Rata-rata per hari: 2.5 jam" />
+                        <Label styleClass="stat-label" text="Hari berturut-turut: 7 hari" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Upcoming Deadlines -->
+            <VBox spacing="15" styleClass="deadlines-card">
+                <Label styleClass="card-title" text="Tenggat Waktu Mendatang" />
+                <TableView fx:id="deadlinesTable">
+                    <columns>
+                        <TableColumn prefWidth="231.0" text="Tugas" />
+                        <TableColumn prefWidth="201.0" text="Mata Pelajaran" />
+                        <TableColumn prefWidth="247.0" text="Tenggat" />
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- Quick Actions -->
+            <HBox spacing="15" />
+        </VBox>
+    </content>
+</ScrollPane>

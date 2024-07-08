@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.ruangdiskusi">
+    <top>
+        <HBox styleClass="header">
+            <ImageView fitHeight="35.0" fitWidth="95.0" preserveRatio="true">
+                <Image url="@../image/loginPage/logoSeedu.png" />
+            </ImageView>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="buttonHome" onAction="#handleButtonHome" style="-fx-background-color: orange;" styleClass="nav-button" text="Kembali ke Beranda" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" styleClass="main-container">
+            <Label styleClass="page-title" text="Forum Diskusi" />
+
+            <HBox alignment="CENTER" spacing="20">
+                <TextField promptText="Cari topik diskusi..." HBox.hgrow="ALWAYS" />
+                <Button prefWidth="102.0" styleClass="search-button" text="Cari" />
+            </HBox>
+
+            <FlowPane hgap="20" styleClass="discussion-bubble-container" vgap="20">
+                <VBox onMouseClicked="#inovasiEkowisata" styleClass="discussion-bubble">
+                    <Label styleClass="bubble-title" text="Inovasi Ekowisata" />
+                    <Label styleClass="bubble-info" text="15 pesan" />
+                </VBox>
+                <VBox styleClass="discussion-bubble">
+                    <Label styleClass="bubble-title" text="Teknologi dalam Pariwisata" />
+                    <Label styleClass="bubble-info" text="23 pesan" />
+                </VBox>
+                <VBox styleClass="discussion-bubble">
+                    <Label styleClass="bubble-title" text="Konservasi Laut" />
+                    <Label styleClass="bubble-info" text="8 pesan" />
+                </VBox>
+                <VBox styleClass="discussion-bubble">
+                    <Label styleClass="bubble-title" text="Pemberdayaan Masyarakat Lokal" />
+                    <Label styleClass="bubble-info" text="19 pesan" />
+                </VBox>
+                <VBox styleClass="discussion-bubble">
+                    <Label styleClass="bubble-title" text="Kebijakan Pariwisata" />
+                    <Label styleClass="bubble-info" text="12 pesan" />
+                </VBox>
+                <VBox styleClass="discussion-bubble">
+                    <Label styleClass="bubble-title" text="Pemasaran Digital" />
+                    <Label styleClass="bubble-info" text="27 pesan" />
+                </VBox>
+                <VBox styleClass="discussion-bubble">
+                    <Label styleClass="bubble-title" text="Sustainable Transportation" />
+                    <Label styleClass="bubble-info" text="9 pesan" />
+                </VBox>
+                <VBox styleClass="discussion-bubble">
+                    <Label styleClass="bubble-title" text="Kuliner Lokal" />
+                    <Label styleClass="bubble-info" text="31 pesan" />
+                </VBox>
+                <VBox styleClass="discussion-bubble">
+                    <Label styleClass="bubble-title" text="Sertifikasi Ekowisata" />
+                    <Label styleClass="bubble-info" text="14 pesan" />
+                </VBox>
+                <VBox styleClass="discussion-bubble">
+                    <Label styleClass="bubble-title" text="Pengalaman Wisatawan" />
+                    <Label styleClass="bubble-info" text="22 pesan" />
+                </VBox>
+            </FlowPane>
+        </VBox>
+    </center>
+</BorderPane>
